@@ -16,6 +16,7 @@ import cn.itcast.ssm.service.TeacherService;
 public class SystemFunctionController {
 
 //	注入StudentService接口的实例化对象
+//adasda
 	@Autowired
 	private StudentService studentService;
 
