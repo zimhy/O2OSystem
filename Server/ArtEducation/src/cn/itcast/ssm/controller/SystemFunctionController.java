@@ -33,14 +33,14 @@ public class SystemFunctionController {
 //		测试数据
 		String userName="新东方";
 		String password="123456";
-		String userType="organization";
+		String userType="student";
 		
 		String resultCode=null;
 		
 		Student student=null;
 		Teacher teacher=null;
 		Organization organization=null;
-		
+		System.out.println("-----");
 //		先判断是不是学生类型
 		if(userType.equals("student")){
 			
