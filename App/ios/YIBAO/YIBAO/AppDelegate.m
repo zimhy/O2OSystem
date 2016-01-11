@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // Override point for customization after application launch.
+    self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
+    self.window.backgroundColor = [UIColor yellowColor] ;
+    
+    
+    // 注册通知
+    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [application registerUserNotificationSettings:setting];
+    
+    
+    
+    
+    // 选择根控制器
+    // 判断下有没有授权
+    
+        // 选择根控制器
+        self.window.rootViewController = [[ViewController alloc] init] ;
+        
+    
+    
+    
+    
+    // 显示窗口
+    [self.window makeKeyAndVisible];
+    // makeKeyAndVisible底层实现
+    // 1. application.keyWindow = self.window
+    // 2. self.window.hidden = NO;
+    
+    
+    
+    return YES;
+
     return YES;
 }
 
