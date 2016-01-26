@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.mapper.StudentMapper" >
+
+   <!-- 根据学生的用户名来登录 -->
+    <select id="findStudentByName"  parameterType="java.lang.String" resultType="studentcustom">
+        select studentId,password from t_student where studentName=#{value}
+    </select>
+    
+    <!--  根据学生的邮箱或用户名，来查询学生的信息-->
+    <select id="findStudentByNameOrEmail" parameterType="java.lang.String" resultType="studentcustom">
+       select studentId,password from t_student where email=#{value} or studentName=#{value}
+    </select>
+ 
+ 	<!-- 根据学生Id查询学生信息 -->	
+ 	<select id="findStudentById" parameterType="java.lang.Integer" resultType="studentCustom">
+ 		select * from t_student where studentId = #{studentId}
+ 	</select>
+ 	
+ 	<!-- 更新学生信息 -->
+ 	<update id="updateStudent" parameterType="studentCustom" >
+ 		UPDATE t_student SET nickName = #{nickName},  email= #{email}, 
+ 							headPortraits = #{headPortraits},studentAge= #{studentAge},
+ 							realName = #{realName},gender = #{gender},
+ 							preference = #{preference}
+		WHERE studentId = #{studentId}
+ 	</update>
+ 	
+ 	
+ 	<!-- 查询学生所有优惠券信息-->
+ 	<select id="findDiscountsBySId" parameterType="java.lang.Integer" resultType="discountCustom">
+ 	     select t_discount.*,t_course.courseName,t_course.mainImage,t_teacher.teacherName,t_organization.organizationName
+ 	     from t_discount,t_course,t_teacher,t_organization
+ 	     where t_discount.studentId=#{studentId} and t_discount.courseId=t_course.courseId  
+ 	     and  t_course.teacherId=t_teacher.teacherId and t_teacher.organizationId=t_organization.organizationId
+ 	</select>
+ 	
+ 	<!--查询优惠券详细信息 -->
+ 	<select id="findDiscountDetailByDId" parameterType="java.lang.Integer" resultType="discountDetaileCustom">
+ 	   select t_discount.discountCode,t_course.courseName,t_course.discountUseInfo
+ 	   from   t_discount,t_course
+ 	   where t_discount.discountId=#{discountId} and  t_discount.courseId=t_course.courseId
+ 	 </select>
+ 	 
+ 	 <!--查询购物车列表  -->
+ 	 <select id="findOrderscarListBySId" parameterType="java.lang.Integer" resultType="ordersCarList">
+ 	    select t_ordersCar.courseId,t_course.courseName,t_course.mainImage,t_teacher.teacherName,t_organization.organizationAddr,t_organization.organizationName
+ 	    from   t_ordersCar ,t_course,t_teacher,t_organization
+ 	    where  t_ordersCar.studentId=#{studentId} and t_ordersCar.courseId=t_course.courseId and t_course.teacherId=t_teacher.teacherId
+ 	           and  t_teacher.organizationId=t_organization.organizationId
+ 	 </select>
+ 	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

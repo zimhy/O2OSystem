@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.mapper.CourseMapper" >
+
+
+     <!--查询每个课程大类下的所有课程  -->
+	<select id="findCoursesByCtypeId" parameterType="java.lang.Integer" resultType="courseCustom">
+		select t_course.*,t_teacher.teacherName,t_organization.organizationName from t_course,t_teacher,t_organization 
+		where t_course.courseTypeId = #{courseTypeId} and t_course.teacherId = t_teacher.teacherId 
+		and t_teacher.organizationId = t_organization.organizationId
+	</select>
+	
+	<!-- 查询所有的学生类型 -->
+	<select id="findCourseTypesList" resultType="courseTypeCustom">
+		select * from t_coursetype
+	</select>
+	
+	
+	<!-- 根据课程ID，查询课程详情 -->
+	<select id="findCourseDetailByCId" parameterType="java.lang.Integer" resultMap="courseDetailMap">
+		select c.*,t.*,o.*,cs.*, s.* from t_course c,t_teacher t,t_organization o,t_coursestudent cs,t_student s where c.courseId=1 and c.teacherId=t.teacherId and t.organizationId=o.organizationId and cs.courseId= c.courseId and cs.studentId=s.studentId
+	</select>
+	
+	<resultMap type="courseDetailCustom" id="courseDetailMap">
+		<id column="courseId" property="courseId"/>
+		<result column="courseName" property="courseName"/>
+		<result column="courseDesc" property="courseDesc"/>
+		<result column="courseStatus" property="courseStatus"/>
+		<result column="mainImage" property="mainImage"/>
+		<association property="teacherCustom" javaType="teacherCustom">
+			<id column="teacherId" property="teacherId" />
+			<result column="teacherName" property="teacherName"/>
+			<result column="education" property="education"/>
+			<result column="seniority" property="seniority"/>
+			<result column="description" property="description"/>
+			<result column="headPortraits" property="teacherHeadPortraits"/>
+			<association property="organizationCustom" javaType="organizationCustom">
+				<id column="organizationId" property="organizationId"/>
+				<result column="organizationName" property="organizationName"/>
+				<result column="organizationDescription" property="organizationDescription"/>
+				<result column="imageId" property="organizationImageId"/>
+			</association>
+		</association>
+		<collection property="comments" ofType="comment">
+			<id column="couStuId" property="couStuId"/>
+			<result column="starLevel" property="starLevel"/>
+			<result column="comment" property="comment"/>
+			<association property="studentCustom" javaType="studentCustom">
+				<id column="studentId" property="studentId" />
+				<result column="studentName" property="studentName"/>
+				<result column="headPortraits" property="headPortraits"/>
+			</association>
+		</collection>
+	</resultMap>
+</mapper>
