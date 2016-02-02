@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YBCourseController : UITableViewController
+@interface YBHomePageController : UIViewController
+-(void) buttonClicked ;
 
 @end
