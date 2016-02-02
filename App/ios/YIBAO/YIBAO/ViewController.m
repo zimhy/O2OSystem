@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+<<<<<<< HEAD
 #import "YBCourseController.h"
 #import "YBProfileController.h"
 #import "YBLoginController.h"
@@ -17,10 +18,18 @@
 @property YBProfileController *profile ;
 @property YBLoginController *login ;
 @end
+=======
+
+@interface ViewController ()
+
+@end
+
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     
     // Do any additional setup after loading the view.
     
@@ -53,11 +62,17 @@
 {
     //TODO
 }
+=======
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 - (void)setUpOneChildViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title
 {
     vc.tabBarItem.title = title;
@@ -70,4 +85,6 @@
 }
 
 
+=======
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 @end

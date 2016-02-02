@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+<<<<<<< HEAD
 @interface ViewController : UITabBarController
+=======
+@interface ViewController : UIViewController
+
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 
 @end
 

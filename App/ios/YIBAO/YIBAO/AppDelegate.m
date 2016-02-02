@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
+<<<<<<< HEAD
 #import "ViewController.h"
+=======
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 
 @interface AppDelegate ()
 
@@ -18,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+<<<<<<< HEAD
     // Override point for customization after application launch.
     self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
     self.window.backgroundColor = [UIColor yellowColor] ;
@@ -50,6 +54,8 @@
     
     return YES;
 
+=======
+>>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
     return YES;
 }
 

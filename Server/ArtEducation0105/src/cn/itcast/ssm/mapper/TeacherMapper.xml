@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.mapper.TeacherMapper" >
+
+   <!-- 根据教师的用户名来查询教师的信息 -->
+    <select id="findTeacherByName"  parameterType="java.lang.String" resultType="teachercustom">
+        select teacherId,password from t_teacher where teacherName=#{value}
+    </select>
+    
+    <!--  根据教师的邮箱，来查询教师的信息-->
+    <select id="findTeacherByNameOrEmail" parameterType="java.lang.String" resultType="teachercustom">
+       select teacherId,password from t_teacher where teacherName=#{value} or email=#{value}
+    </select>
+ 
+</mapper>
