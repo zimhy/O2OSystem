@@ -10,4 +10,8 @@
 
 @interface YBCourseTypeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *courseTypeImage;
+@property (weak, nonatomic) IBOutlet UILabel *courseTypeName;
+
+-(void)setupCell:(NSString *)imageUrl : (NSString *) couresTypeName;
 @end

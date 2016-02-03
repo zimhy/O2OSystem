@@ -9,11 +9,13 @@
 #import "YBHomePageController.h"
 #import "YBHomePageView.h"
 #import "YBImageScrollView.h"
+#import "YBCourseTypeCell.h"
 #import <UIKit/UIKit.h>
 //#import "header"
 
 @interface YBHomePageController ()<UIScrollViewDelegate>
 @property YBImageScrollView *carousel ;
+@property NSArray *courseArray ;
 @property NSTimer *timer ;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
@@ -24,6 +26,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:224/255.0 blue:222/255.0 alpha:1.0] ;
     NSLog(@"%@",self.view) ;
+    //self
     self.navigationItem.title = @"课程" ;
     [self loadCarousel] ;
     [self loadCourseTypes] ;
@@ -79,7 +82,18 @@
 }
 -(void)loadCourseTypes
 {
-    //TODO
+    _courseArray = @[@[@"shengyue_icon.jpg", @"声乐"],
+                     @[@"gangqing_icon.jpg", @"钢琴"],
+                     @[@"shoutiqing_icon.jpg", @"手提琴"],
+                     @[@"jiazigu_icon.jpg", @"架子鼓"],
+                     @[@"wudao_icon.jpg", @"舞蹈"]];
+    
+    UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*320/800) ];
+    UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
+    courseTypes.delegate = self ;
+    courseTypes.dataSource = self ;
+    [self.view addSubview:courseTypes ] ;
+    
 }
 
 /**
@@ -147,6 +161,61 @@
 {
     //    开启定时器
     [self addTimer];
+}
+
+
+
+/**
+ 1、返回 UITableView 的区段数
+ */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1 ;
+}
+
+/**
+ 2、返回 UITableView 的行数
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _courseArray.count;}
+
+/**
+ 3、设置行的高度
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 0 ;
+}
+/**
+ 4、返回指定的 row 的 cell
+ */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 1. cell标示符，使cell能够重用
+    static NSString *paperCell = @"paperCell";
+    // 2. 从TableView中获取标示符为paperCell的Cell
+    YBCourseTypeCell *cell = (YBCourseTypeCell *)[tableView dequeueReusableCellWithIdentifier:paperCell];
+    // 如果 cell = nil , 则表示 tableView 中没有可用的闲置cell
+    if(cell == nil){
+        // 3. 把 WPaperCell.xib 放入数组中
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] ;
+        
+        // 获取nib中的第一个对象
+        for (id oneObject in nib){
+            // 判断获取的对象是否为自定义cell
+            if ([oneObject isKindOfClass:[YBCourseTypeCell class]]){
+                // 4. 修改 cell 对象属性
+                cell = [(YBCourseTypeCell *)oneObject initWithStyle:UITableViewCellStyleDefault reuseIdentifier:paperCell];
+            }
+        }
+    }
+    // 5. 设置单元格属性
+    //TODO
+    [cell setupCell:_courseArray[indexPath.row][0]:_courseArray[indexPath.row][1]];
+    return cell;
+}
+/**
+ 5、点击单元格时的处理
+ */
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 

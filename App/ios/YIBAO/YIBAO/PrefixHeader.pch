@@ -13,27 +13,28 @@
 #import "UIImage+Image.h"
 #import <UIKit/UIKit.h>
 
-#define ZMHKeyWindow [UIApplication sharedApplication].keyWindow
+#define YBKeyWindow [UIApplication sharedApplication].keyWindow
 
 // ...表示宏定义的可变参数
 // __VA_ARGS__:表示函数里面的可变参数
 #ifdef DEBUG // 调试
 
-#define ZMHLog(...) NSLog(__VA_ARGS__)
+#define YBLog(...) NSLog(__VA_ARGS__)
 
 #else // 发布
 
-#define ZMHLog(...)
+#define YBLog(...)
 
 #endif
 
 /*        cell            */
-#define ZMHStatusCellMargin 10
-#define ZMHNameFont [UIFont systemFontOfSize:13]
-#define ZMHTimeFont [UIFont systemFontOfSize:12]
-#define ZMHSourceFont ZMHTimeFont
-#define ZMHTextFont [UIFont systemFontOfSize:15]
-#define ZMHScreenW [UIScreen mainScreen].bounds.size.width
+#define YBStatusCellMargin 10
+#define YBNameFont [UIFont systemFontOfSize:13]
+#define YBTimeFont [UIFont systemFontOfSize:12]
+#define YBSourceFont YBTimeFont
+#define YBTextFont [UIFont systemFontOfSize:15]
+#define YBScreenW [UIScreen mainScreen].bounds.size.width
+#define YBScreenH [UIScreen mainScreen].bounds.size.height
 
 
 #endif

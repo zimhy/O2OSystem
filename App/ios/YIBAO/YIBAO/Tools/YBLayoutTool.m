@@ -7,7 +7,8 @@
 //
 
 #import "YBLayoutTool.h"
+@interface YBLayoutTool()
 
-@implementation YBLayoutTool
+
 
 @end

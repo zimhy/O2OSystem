@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import <UIKit/UIKit.h>
-#import "ZMHStatus.h"
 
-//#import <CG>
-@class ZMHStatus;
+
+
 @interface ZMHStatusFrame : NSObject
 
 /**
@@ -64,8 +63,6 @@
 @property (nonatomic, assign) CGRect toolBarFrame;
 
 
-
-// cell的高度
 @property (nonatomic, assign) CGFloat cellHeight;
 
 

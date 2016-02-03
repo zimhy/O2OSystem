@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+NSInteger a = 1 ;
 
-@interface YBLayoutTool : UIImageView
+@interface YBLayoutTool:NSObject
+
+
+@property (nonatomic, assign) CGRect carouselFrame;
+
+
 
 @end

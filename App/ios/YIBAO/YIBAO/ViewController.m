@@ -7,34 +7,26 @@
 //
 
 #import "ViewController.h"
-<<<<<<< HEAD
 #import "YBCourseController.h"
 #import "YBProfileController.h"
 #import "YBLoginController.h"
 #import "YBAccountTool.h"
+#import "YBHomePageController.h"
 
 @interface ViewController ()
 @property YBCourseController *course ;
 @property YBProfileController *profile ;
 @property YBLoginController *login ;
 @end
-=======
-
-@interface ViewController ()
-
-@end
-
->>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
+   // ［UIApplication sharedApplication setStatus BarHidden：YES]    // Do any additional setup after loading the view.
+    [[UIApplication sharedApplication] setStatusBarHidden:YES animated:NO] ;
     
-    // Do any additional setup after loading the view.
     
-    // 添加所有子控制器
-    [self.tabBar setTintColor:[UIColor orangeColor] ] ;
+   
     [self setUpAllChildViewController];
     
     // 自定义tabBar
@@ -44,7 +36,7 @@
 }
 -(void) setUpAllChildViewController
 {
-    _course = [[YBCourseController alloc] init] ;
+    _course = [[YBCourseController alloc] initWithRootViewController:[[YBHomePageController alloc]init ]] ;
     [self setUpOneChildViewController:_course image:[UIImage imageNamed:@"tabbar_home" ] selectedImage:[UIImage imageNamed:@"tabbar_home_selected"] title:@"课程"];
     if([YBAccountTool isLogined])
     {   _profile = [[YBProfileController alloc]init] ;
@@ -60,31 +52,28 @@
 }
 -(void)setUpTabBar
 {
-    //TODO
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 49)];
+    backView.backgroundColor = [UIColor colorWithRed:48/255.0 green:63/255.0 blue:159/255.0 alpha:1.0];
+    [self.tabBar insertSubview:backView atIndex:0];
+    self.tabBar.opaque = YES;
+    //[self.tabBar setBackgroundColor:[UIColor colorWithRed:48/255.0 green:63/255.0 blue:159/255.0 alpha:1.0]];
+    [self.tabBar setTintColor:[UIColor orangeColor] ] ;
 }
-=======
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
->>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-<<<<<<< HEAD
 - (void)setUpOneChildViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title
 {
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = image;
     
-    vc.tabBarItem.badgeValue = @"10";
+    //vc.tabBarItem.badgeValue = @"10";
     vc.tabBarItem.selectedImage = selectedImage;
     
     [self addChildViewController:vc];
 }
 
 
-=======
->>>>>>> f3c09bf5e463270ad7157eef4226701c44d8b842
 @end

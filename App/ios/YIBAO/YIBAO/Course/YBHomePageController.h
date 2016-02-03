@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YBHomePageController : UIViewController
--(void) buttonClicked ;
+@interface YBHomePageController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
 
 @end
