@@ -35,13 +35,7 @@
 
 -(void)loadCarousel
 {
-    
-//    _carousel = [[YBImageScrollView alloc] initWithFrame:CGRectMake(111, 111, YBScreenW,480/800*YBScreenH)];
-//    _carousel.backgroundColor = [UIColor blackColor] ;
-//    _button = [[UIButton alloc]initWithFrame:CGRectMake(111, 111, YBScreenW,480/800*YBScreenH) ];
-//    _button.titleLabel.text = @"aaaa" ;
-//    self.view.backgroundColor = [UIColor blackColor] ;
-    _carousel = [[YBImageScrollView alloc] initWithFrame:CGRectMake(0, 0, YBScreenW,YBScreenH*270/800) ] ;
+        _carousel = [[YBImageScrollView alloc] initWithFrame:CGRectMake(0, 0, YBScreenW,YBScreenH*270/800) ] ;
     
     for (int i = 0 ; i < 5 ; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
@@ -71,14 +65,10 @@
     
     [self addTimer];
     
-    //image.center = CGPointMake(200/1, 200/1) ;
-    NSLog(@"%@ ",_carousel) ;
     [self.view addSubview:_carousel];
     _pageControl = [[UIPageControl alloc] init] ;
     _pageControl.numberOfPages = 5 ;
     [self.view addSubview:_pageControl] ;
-//    [self.view addSubview:_carousel] ;
- //   [self]
 }
 -(void)loadCourseTypes
 {
@@ -88,8 +78,9 @@
                      @[@"jiazigu_icon.jpg", @"架子鼓"],
                      @[@"wudao_icon.jpg", @"舞蹈"]];
     
-    UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*320/800) ];
-    UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
+    UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*480/800) ];
+    //UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
+    [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
     courseTypes.delegate = self ;
     courseTypes.dataSource = self ;
     [self.view addSubview:courseTypes ] ;
@@ -182,16 +173,16 @@
  3、设置行的高度
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 0 ;
+    return 88.0 ;
 }
 /**
  4、返回指定的 row 的 cell
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // 1. cell标示符，使cell能够重用
-    static NSString *paperCell = @"paperCell";
+    static NSString *YBCourseTypeCellID = @"YBCourseTypeCell";
     // 2. 从TableView中获取标示符为paperCell的Cell
-    YBCourseTypeCell *cell = (YBCourseTypeCell *)[tableView dequeueReusableCellWithIdentifier:paperCell];
+    YBCourseTypeCell *cell = (YBCourseTypeCell *)[tableView dequeueReusableCellWithIdentifier:YBCourseTypeCellID];
     // 如果 cell = nil , 则表示 tableView 中没有可用的闲置cell
     if(cell == nil){
         // 3. 把 WPaperCell.xib 放入数组中
@@ -202,7 +193,7 @@
             // 判断获取的对象是否为自定义cell
             if ([oneObject isKindOfClass:[YBCourseTypeCell class]]){
                 // 4. 修改 cell 对象属性
-                cell = [(YBCourseTypeCell *)oneObject initWithStyle:UITableViewCellStyleDefault reuseIdentifier:paperCell];
+                cell = [(YBCourseTypeCell *)oneObject initWithStyle:UITableViewCellStyleDefault reuseIdentifier:YBCourseTypeCellID];
             }
         }
     }
@@ -215,7 +206,8 @@
  5、点击单元格时的处理
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    YBCourseTypeCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
+    NSLog(@"%@",cell.courseTypeName.text) ;
 }
 
 

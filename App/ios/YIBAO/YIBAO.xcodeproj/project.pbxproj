@@ -44,6 +44,7 @@
 		318359791C3BF58500FAB538 /* YBLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318359781C3BF58500FAB538 /* YBLoginController.m */; };
 		3183597C1C3BF5AD00FAB538 /* YBHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3183597B1C3BF5AD00FAB538 /* YBHomePageController.m */; };
 		318359801C3BF61B00FAB538 /* YBAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3183597F1C3BF61B00FAB538 /* YBAccountTool.m */; };
+		31A5AD221C6355EA00C770F7 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A5AD211C6355EA00C770F7 /* UIImage+Scale.m */; };
 		31AF57461C479DEB0096086D /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF57451C479DEB0096086D /* UIView+Frame.m */; };
 		31AF574E1C47A1230096086D /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF574D1C47A1230096086D /* UIImage+Image.m */; };
 		31AF57511C47AE160096086D /* YBCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF57501C47AE160096086D /* YBCourseController.m */; };
@@ -120,6 +121,8 @@
 		3183597B1C3BF5AD00FAB538 /* YBHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBHomePageController.m; path = Course/YBHomePageController.m; sourceTree = "<group>"; };
 		3183597E1C3BF61B00FAB538 /* YBAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBAccountTool.h; path = Tools/YBAccountTool.h; sourceTree = "<group>"; };
 		3183597F1C3BF61B00FAB538 /* YBAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBAccountTool.m; path = Tools/YBAccountTool.m; sourceTree = "<group>"; };
+		31A5AD201C6355EA00C770F7 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		31A5AD211C6355EA00C770F7 /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
 		31AF57441C479DEB0096086D /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		31AF57451C479DEB0096086D /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		31AF574B1C47A1050096086D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -316,6 +319,8 @@
 				31AF574D1C47A1230096086D /* UIImage+Image.m */,
 				31AF57441C479DEB0096086D /* UIView+Frame.h */,
 				31AF57451C479DEB0096086D /* UIView+Frame.m */,
+				31A5AD201C6355EA00C770F7 /* UIImage+Scale.h */,
+				31A5AD211C6355EA00C770F7 /* UIImage+Scale.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				318359451C3BA6BE00FAB538 /* YIBAO.xcdatamodeld in Sources */,
 				3183597C1C3BF5AD00FAB538 /* YBHomePageController.m in Sources */,
 				318359391C3BA6BE00FAB538 /* main.m in Sources */,
+				31A5AD221C6355EA00C770F7 /* UIImage+Scale.m in Sources */,
 				31AF57461C479DEB0096086D /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

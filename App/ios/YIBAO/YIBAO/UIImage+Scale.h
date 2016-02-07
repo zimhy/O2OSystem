@@ -6,8 +6,7 @@
 //  Copyright © 2016年 ZJU. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface UIImage_Scale : NSObject
-
+#import <UIKit/UIKit.h>
+@interface UIImage (scale)
+-(UIImage*)scaleToSize:(CGSize)size;
 @end

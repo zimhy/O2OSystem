@@ -7,6 +7,7 @@
 //
 
 #import "YBCourseTypeCell.h"
+#import "UIImage+Scale.h"
 
 @implementation YBCourseTypeCell
 
@@ -18,7 +19,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        self.backgroundColor = [UIColor colorWithRed:225/255.0 green:224/255.0 blue:222/255.0 alpha:1.0] ;
     }
     return self;
 }
@@ -42,7 +43,8 @@
 
 -(void)setupCell:(NSString *)imageUrl : (NSString *) couresTypeName
 {
-    self.courseTypeImage  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageUrl]] ;
-    self.courseTypeName = couresTypeName ;
+    //self.courseTypeImage.image = [[UIImage imageNamed:@"baleiwu_icon"] scaleToSize:self.courseTypeImage.image.size] ;
+    self.courseTypeImage.image = [UIImage imageNamed:@"shengyue_icon"] ;
+    self.courseTypeName.text = couresTypeName ;
 }
 @end
