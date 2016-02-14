@@ -72,15 +72,16 @@
 }
 -(void)loadCourseTypes
 {
-    _courseArray = @[@[@"shengyue_icon.jpg", @"声乐"],
-                     @[@"gangqing_icon.jpg", @"钢琴"],
-                     @[@"shoutiqing_icon.jpg", @"手提琴"],
-                     @[@"jiazigu_icon.jpg", @"架子鼓"],
-                     @[@"wudao_icon.jpg", @"舞蹈"]];
+    _courseArray = @[@[@"shengyue_icon", @"声乐"],
+                     @[@"gangqing_icon", @"钢琴"],
+                     @[@"shoutiqing_icon", @"手提琴"],
+                     @[@"jiazigu_icon", @"架子鼓"],
+                     @[@"wudao_icon", @"舞蹈"]];
     
     UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*480/800) ];
     //UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
     [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
+    
     courseTypes.delegate = self ;
     courseTypes.dataSource = self ;
     [self.view addSubview:courseTypes ] ;
@@ -131,7 +132,7 @@
 // scrollview滚动的时候调用
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"滚动中");
+   // NSLog(@"滚动中");
     //    计算页码
     //    页码 = (contentoffset.x + scrollView一半宽度)/scrollView宽度
     CGFloat scrollviewW =  scrollView.frame.size.width;
@@ -207,7 +208,11 @@
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     YBCourseTypeCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
+    
     NSLog(@"%@",cell.courseTypeName.text) ;
+    NSLog(@"%f",cell.frame.size.width);
+
+        NSLog(@"%f",cell.backGroundView.frame.size.width);
 }
 
 

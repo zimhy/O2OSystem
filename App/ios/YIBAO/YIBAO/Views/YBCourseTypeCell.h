@@ -10,6 +10,7 @@
 
 @interface YBCourseTypeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *backGroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseTypeImage;
 @property (weak, nonatomic) IBOutlet UILabel *courseTypeName;
 

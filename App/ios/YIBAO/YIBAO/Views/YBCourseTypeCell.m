@@ -20,6 +20,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:225/255.0 green:224/255.0 blue:222/255.0 alpha:1.0] ;
+        //self.backGroundView.frame.size.width = self.frame.
+        
     }
     return self;
 }
@@ -43,8 +45,8 @@
 
 -(void)setupCell:(NSString *)imageUrl : (NSString *) couresTypeName
 {
-    //self.courseTypeImage.image = [[UIImage imageNamed:@"baleiwu_icon"] scaleToSize:self.courseTypeImage.image.size] ;
-    self.courseTypeImage.image = [UIImage imageNamed:@"shengyue_icon"] ;
+    self.courseTypeImage.image = [UIImage imageNamed:imageUrl] ;
     self.courseTypeName.text = couresTypeName ;
+    
 }
 @end
