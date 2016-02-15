@@ -16,6 +16,7 @@
 @interface YBHomePageController ()<UIScrollViewDelegate>
 @property YBImageScrollView *carousel ;
 @property NSArray *courseArray ;
+@property NSArray *carouselArray ;
 @property NSTimer *timer ;
 @property (retain, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
@@ -36,7 +37,7 @@
 -(void)loadCarousel
 {
         _carousel = [[YBImageScrollView alloc] initWithFrame:CGRectMake(0, 0, YBScreenW,YBScreenH*270/800) ] ;
-    
+    _carouselArray = @[@"ad_1",@"ad_2",@"ad_3",@"ad_4",@"ad_5"];
     for (int i = 0 ; i < 5 ; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
          //        图片X
@@ -45,7 +46,7 @@
         imageView.frame =CGRectMake(imageX, 0, YBScreenW,YBScreenH*180/800);
         //        设置图片
           //       NSString *name = [NSString stringWithFormat:@"img_0%d", i + 1];
-        imageView.image = [UIImage imageNamed:@"loading"];
+        imageView.image = [UIImage imageNamed:_carouselArray[i]];
          //        隐藏指示条
         _carousel.showsHorizontalScrollIndicator = NO;
         
@@ -80,8 +81,8 @@
     
     UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*480/800) ];
     //UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
-   // [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
-    
+    [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
+    courseTypes.backgroundColor = [UIColor colorWithRed:221/255 green:220/255 blue:218/255 alpha:0] ;
     courseTypes.delegate = self ;
     courseTypes.dataSource = self ;
     [self.view addSubview:courseTypes ] ;
@@ -205,7 +206,7 @@
 //    NSLog(@"%f",frame.size.height) ;
 //    cell.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width,frame.size.height-40) ;
 //     NSLog(@"%f",cell.frame.size.height) ;
-    cell.backgroundColor = [UIColor grayColor] ;
+//    cell.backgroundColor = [UIColor grayColor] ;
     return cell;
 }
 /**

@@ -36,8 +36,8 @@
     NSInteger inset  = 10 ;
     frame.origin.x += 2*inset;
     frame.size.width -= 4 * inset;
-    frame.origin.y += inset ;
-    frame.size.height -= 2*inset ;
+    frame.origin.y += inset/2 ;
+    frame.size.height -= inset ;
     [super setFrame:frame];
     if(_courseTypeImage!=nil)
     {
