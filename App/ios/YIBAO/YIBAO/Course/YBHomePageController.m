@@ -80,7 +80,7 @@
     
     UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*480/800) ];
     //UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
-    [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
+   // [courseTypes setSeparatorStyle:UITableViewCellSeparatorStyleNone] ;
     
     courseTypes.delegate = self ;
     courseTypes.dataSource = self ;
@@ -174,7 +174,7 @@
  3、设置行的高度
  */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 88.0 ;
+    return 70.0 ;
 }
 /**
  4、返回指定的 row 的 cell
@@ -201,6 +201,11 @@
     // 5. 设置单元格属性
     //TODO
     [cell setupCell:_courseArray[indexPath.row][0]:_courseArray[indexPath.row][1]];
+//    CGRect frame  = cell.frame ;
+//    NSLog(@"%f",frame.size.height) ;
+//    cell.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width,frame.size.height-40) ;
+//     NSLog(@"%f",cell.frame.size.height) ;
+    cell.backgroundColor = [UIColor grayColor] ;
     return cell;
 }
 /**
@@ -210,7 +215,7 @@
     YBCourseTypeCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     
     NSLog(@"%@",cell.courseTypeName.text) ;
-    NSLog(@"%f",cell.frame.size.width);
+    NSLog(@"%f",cell.frame.size.height);
 
         NSLog(@"%f",cell.backGroundView.frame.size.width);
 }

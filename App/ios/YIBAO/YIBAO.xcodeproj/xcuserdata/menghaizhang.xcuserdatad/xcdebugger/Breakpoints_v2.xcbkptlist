@@ -169,22 +169,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YIBAO/Course/YBHomePageController.m"
-            timestampString = "476860531.765139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YIBAO/UIImage+Scale.m"
             timestampString = "476272549.255223"
             startingColumnNumber = "9223372036854775807"
@@ -202,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YIBAO/Views/YBCourseTypeCell.m"
-            timestampString = "476858753.41767"
+            timestampString = "477154014.240092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-setupCell::"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-setFrame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
