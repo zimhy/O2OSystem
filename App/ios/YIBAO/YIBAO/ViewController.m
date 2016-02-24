@@ -8,14 +8,14 @@
 
 #import "ViewController.h"
 #import "YBCourseController.h"
-#import "YBProfileController.h"
+#import "YBProfileViewController.h"
 #import "YBLoginController.h"
 #import "YBAccountTool.h"
 #import "YBHomePageController.h"
 
 @interface ViewController ()
 @property YBCourseController *course ;
-@property YBProfileController *profile ;
+@property YBProfileViewController *profile ;
 @property YBLoginController *login ;
 @end
 @implementation ViewController
@@ -38,21 +38,22 @@
 {
     _course = [[YBCourseController alloc] initWithRootViewController:[[YBHomePageController alloc]init ]] ;
     [self setUpOneChildViewController:_course image:[UIImage imageNamed:@"tabbar_home" ] selectedImage:[UIImage imageNamed:@"tabbar_home_selected"] title:@"课程"];
-    if([YBAccountTool isLogined])
-    {   _profile = [[YBProfileController alloc]init] ;
+//    if([YBAccountTool isLogined])
+//    {
+        _profile = [[YBProfileViewController alloc]initWithNibName:@"YBProfileViewController" bundle:nil] ;
         [self setUpOneChildViewController:_profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageNamed:@"tabbar_profile_selected"] title:@"我"];
       //  [self addChildViewController:_profile] ;
-    }else
-    {
-        _login = [[YBLoginController alloc] init ] ;
-       // [self addChildViewController:_login] ;
-     //   [self ]
-    }
+//    }else
+//    {
+//        _login = [[YBLoginController alloc] init ] ;
+//       // [self addChildViewController:_login] ;
+//     //   [self ]
+//    }
     
 }
 -(void)setUpTabBar
 {
-    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 49)];
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, YBScreenW, self.tabBar.frame.size.height )];
     backView.backgroundColor = [UIColor colorWithRed:48/255.0 green:63/255.0 blue:159/255.0 alpha:1.0];
     [self.tabBar insertSubview:backView atIndex:0];
     self.tabBar.opaque = YES;

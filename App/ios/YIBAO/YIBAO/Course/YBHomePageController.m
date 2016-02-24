@@ -73,11 +73,11 @@
 }
 -(void)loadCourseTypes
 {
-    _courseArray = @[@[@"shengyue_icon", @"声乐"],
-                     @[@"gangqing_icon", @"钢琴"],
-                     @[@"shoutiqing_icon", @"手提琴"],
-                     @[@"jiazigu_icon", @"架子鼓"],
-                     @[@"wudao_icon", @"舞蹈"]];
+    _courseArray = @[@[@"class_shengyue", @"声乐"],
+                     @[@"class_gangqin", @"钢琴"],
+                     @[@"class_shoutiqin", @"手提琴"],
+                     @[@"class_jiazigu", @"架子鼓"],
+                     @[@"class_wudao", @"舞蹈"]];
     
     UITableView *courseTypes  = [[UITableView alloc]initWithFrame:CGRectMake(0, YBScreenH*270/800, YBScreenW, YBScreenH*480/800) ];
     //UITableViewCell *courseType = [[[NSBundle mainBundle] loadNibNamed:@"YBCourseTypeCell" owner:self options:nil] lastObject];
