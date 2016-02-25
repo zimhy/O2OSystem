@@ -150,16 +150,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YIBAO/UIImage+Scale.m"
-            timestampString = "476272549.255223"
+            filePath = "YIBAO/Profile/YBProfileViewController.m"
+            timestampString = "478101087.77578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "7"
-            endingLineNumber = "7"
-            landmarkName = "-scaleToSize:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-loadprofileTable"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YIBAO/Views/YBCourseTypeCell.m"
-            timestampString = "477154014.240092"
+            filePath = "YIBAO/Profile/YBProfileTableViewCell.m"
+            timestampString = "478102978.115601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-setFrame:"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-setupCell:::"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YIBAO/ViewController.m"
-            timestampString = "478019414.759369"
+            filePath = "YIBAO/Profile/YBProfileViewController.m"
+            timestampString = "478101291.355737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-setUpAllChildViewController"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,13 +201,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YIBAO/ViewController.m"
-            timestampString = "478020462.87371"
+            filePath = "YIBAO/Profile/YBProfileViewController.m"
+            timestampString = "478101736.432295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YIBAO/Profile/YBProfileViewController.m"
+            timestampString = "478101988.383787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

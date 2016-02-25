@@ -21,7 +21,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor] ;
         //self.backGroundView.frame.size.width = self.frame.
-        CGRect frame  = self.frame ;
+        //CGRect frame  = self.frame ;
         //self.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width,frame.size.height-40) ;
         //NSLog(@"%@",self.backGroundView.frame) ;
         

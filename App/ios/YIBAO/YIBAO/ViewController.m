@@ -12,10 +12,11 @@
 #import "YBLoginController.h"
 #import "YBAccountTool.h"
 #import "YBHomePageController.h"
+#import "YBProfileRootController.h"
 
 @interface ViewController ()
 @property YBCourseController *course ;
-@property YBProfileViewController *profile ;
+@property YBProfileRootController *profileRoot ;
 @property YBLoginController *login ;
 @end
 @implementation ViewController
@@ -40,8 +41,9 @@
     [self setUpOneChildViewController:_course image:[UIImage imageNamed:@"tabbar_home" ] selectedImage:[UIImage imageNamed:@"tabbar_home_selected"] title:@"课程"];
 //    if([YBAccountTool isLogined])
 //    {
-        _profile = [[YBProfileViewController alloc]initWithNibName:@"YBProfileViewController" bundle:nil] ;
-        [self setUpOneChildViewController:_profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageNamed:@"tabbar_profile_selected"] title:@"我"];
+         YBProfileViewController *profile = [[YBProfileViewController alloc]initWithNibName:@"YBProfileViewController" bundle:nil] ;
+        _profileRoot  = [[YBProfileRootController alloc]initWithRootViewController:profile] ;
+        [self setUpOneChildViewController:_profileRoot image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageNamed:@"tabbar_profile_selected"] title:@"我"];
       //  [self addChildViewController:_profile] ;
 //    }else
 //    {

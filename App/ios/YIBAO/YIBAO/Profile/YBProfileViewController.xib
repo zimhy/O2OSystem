@@ -3,42 +3,81 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBProfileViewController">
             <connections>
+                <outlet property="headerBackGroundView" destination="4Yp-pO-mhZ" id="0mH-8n-yRO"/>
+                <outlet property="headerIconView" destination="Wwx-nj-Z1C" id="pdE-SO-Kw5"/>
+                <outlet property="profileTables" destination="hCm-Cn-i0M" id="gb9-sB-RXS"/>
+                <outlet property="userNameLB" destination="aaO-y5-auc" id="C1A-LQ-og4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_my.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-mm-EKA">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="207"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hugh.png" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-2K-zTN">
-                    <rect key="frame" x="160" y="268" width="240" height="128"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yp-pO-mhZ">
+                    <rect key="frame" x="0.0" y="45" width="320" height="223"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="用户名/昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaO-y5-auc">
+                            <rect key="frame" x="120" y="170" width="91" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hugh.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wwx-nj-Z1C">
+                            <rect key="frame" x="109" y="61" width="102" height="101"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="FQq-4f-ewW"/>
+                                <constraint firstAttribute="width" constant="100" id="mGP-PR-rGR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="50"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="aaO-y5-auc" firstAttribute="top" secondItem="Wwx-nj-Z1C" secondAttribute="bottom" constant="13" id="2co-b1-3ks"/>
+                        <constraint firstItem="aaO-y5-auc" firstAttribute="centerX" secondItem="4Yp-pO-mhZ" secondAttribute="centerX" id="OPY-Wh-NRg"/>
+                        <constraint firstItem="Wwx-nj-Z1C" firstAttribute="centerY" secondItem="4Yp-pO-mhZ" secondAttribute="centerY" id="ZOC-Tn-P0Q"/>
+                        <constraint firstItem="Wwx-nj-Z1C" firstAttribute="centerX" secondItem="4Yp-pO-mhZ" secondAttribute="centerX" id="eCU-Av-XcO"/>
+                        <constraint firstAttribute="bottom" secondItem="aaO-y5-auc" secondAttribute="bottom" constant="27" id="p80-kA-6la"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCm-Cn-i0M">
+                    <rect key="frame" x="42" y="294" width="236" height="194"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="productImageView.layer.masksToBounds " value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="productImageView.layer.cornerRadius" value="imageSize / 2.0"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </imageView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mqc-2K-zTN" secondAttribute="bottom" constant="432" id="7J8-0r-2Pk"/>
-                <constraint firstItem="mKn-mm-EKA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AmR-6h-t44"/>
-                <constraint firstItem="mqc-2K-zTN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GBS-i4-1xK"/>
-                <constraint firstItem="mKn-mm-EKA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tz1-OZ-t1w"/>
-                <constraint firstAttribute="bottom" secondItem="mKn-mm-EKA" secondAttribute="bottom" constant="393" id="dnp-Kk-ASG"/>
-                <constraint firstAttribute="trailing" secondItem="mKn-mm-EKA" secondAttribute="trailing" id="p52-8w-edW"/>
+                <constraint firstAttribute="bottom" secondItem="hCm-Cn-i0M" secondAttribute="bottom" constant="80" id="9S6-Xz-EpB"/>
+                <constraint firstAttribute="trailing" secondItem="4Yp-pO-mhZ" secondAttribute="trailing" id="FrK-um-8J4"/>
+                <constraint firstItem="4Yp-pO-mhZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Ie5-4a-NAQ"/>
+                <constraint firstItem="hCm-Cn-i0M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZXe-pF-hWU"/>
+                <constraint firstItem="4Yp-pO-mhZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lDx-Ox-lY8"/>
+                <constraint firstItem="hCm-Cn-i0M" firstAttribute="top" secondItem="4Yp-pO-mhZ" secondAttribute="bottom" constant="40" id="ot8-tK-7aB"/>
+                <constraint firstItem="4Yp-pO-mhZ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="tdl-Rs-Qqi"/>
+                <constraint firstItem="hCm-Cn-i0M" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="yDQ-RA-0rL"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="276" y="370"/>
         </view>
     </objects>
     <resources>
-        <image name="bg_my.jpg" width="350" height="185"/>
         <image name="hugh.png" width="512" height="512"/>
     </resources>
 </document>

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBHomePageController"/>
@@ -11,7 +10,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YBCourseTypeCell" rowHeight="88" id="6cO-CK-5dW" customClass="YBCourseTypeCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="6cO-CK-5dW" id="uWq-jf-nQI">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6cO-CK-5dW" id="uWq-jf-nQI">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -33,9 +32,6 @@
                     <constraint firstItem="o77-8B-kIp" firstAttribute="centerY" secondItem="uWq-jf-nQI" secondAttribute="centerY" id="9Sq-7M-7nM"/>
                     <constraint firstItem="cUf-Kh-1QX" firstAttribute="centerY" secondItem="uWq-jf-nQI" secondAttribute="centerY" id="TIr-og-gKp"/>
                     <constraint firstItem="cUf-Kh-1QX" firstAttribute="centerX" secondItem="uWq-jf-nQI" secondAttribute="centerX" id="WDk-NL-epE"/>
-                    <constraint firstItem="cUf-Kh-1QX" firstAttribute="centerY" secondItem="uWq-jf-nQI" secondAttribute="centerY" id="Wie-pX-akm"/>
-                    <constraint firstItem="o77-8B-kIp" firstAttribute="top" secondItem="uWq-jf-nQI" secondAttribute="topMargin" id="Yjh-IC-jCS"/>
-                    <constraint firstItem="cUf-Kh-1QX" firstAttribute="centerX" secondItem="uWq-jf-nQI" secondAttribute="centerX" id="y0O-zm-ZA7"/>
                 </constraints>
             </tableViewCellContentView>
             <userDefinedRuntimeAttributes>
