@@ -10,6 +10,7 @@
 #import "YBCourseController.h"
 #import "YBProfileViewController.h"
 #import "YBLoginController.h"
+#import "YBLoginRootController.h"
 #import "YBAccountTool.h"
 #import "YBHomePageController.h"
 #import "YBProfileRootController.h"
@@ -17,7 +18,7 @@
 @interface ViewController ()
 @property YBCourseController *course ;
 @property YBProfileRootController *profileRoot ;
-@property YBLoginController *login ;
+@property YBLoginRootController *loginRoot ;
 @end
 @implementation ViewController
 
@@ -39,18 +40,23 @@
 {
     _course = [[YBCourseController alloc] initWithRootViewController:[[YBHomePageController alloc]init ]] ;
     [self setUpOneChildViewController:_course image:[UIImage imageNamed:@"tabbar_home" ] selectedImage:[UIImage imageNamed:@"tabbar_home_selected"] title:@"课程"];
-//    if([YBAccountTool isLogined])
-//    {
+    if([YBAccountTool isLogined])
+    {
          YBProfileViewController *profile = [[YBProfileViewController alloc]initWithNibName:@"YBProfileViewController" bundle:nil] ;
         _profileRoot  = [[YBProfileRootController alloc]initWithRootViewController:profile] ;
         [self setUpOneChildViewController:_profileRoot image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageNamed:@"tabbar_profile_selected"] title:@"我"];
-      //  [self addChildViewController:_profile] ;
-//    }else
-//    {
-//        _login = [[YBLoginController alloc] init ] ;
-//       // [self addChildViewController:_login] ;
-//     //   [self ]
-//    }
+        [self addChildViewController:_profileRoot] ;
+    }else
+    {
+        UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"login-registerStoryBoard" bundle:nil];
+//        YBLoginController *login = [storyBoard instantiateViewControllerWithIdentifier:@"YBLoginController" ];
+//        _loginRoot = [[YBLoginRootController alloc] initWithRootViewController:login] ;
+        _loginRoot = [storyBoard instantiateViewControllerWithIdentifier:@"YBLoginRootController"] ;
+       
+        [self setUpOneChildViewController:_loginRoot image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageNamed:@"tabbar_profile_selected"] title:@"我"];
+        [self addChildViewController:_loginRoot] ;
+    
+    }
     
 }
 -(void)setUpTabBar

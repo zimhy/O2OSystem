@@ -11,7 +11,7 @@
 @implementation YBAccountTool
 +(bool) isLogined
 {
-    return YES ;
+    return NO ;
 }
 @end
 

@@ -16,13 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.frame  ;
+    gradient.colors = [NSArray arrayWithObjects:
+                       (id)[UIColor colorWithRed:169/255.0 green:176/255.0 blue:211/255.0 alpha:1.0].CGColor,
+                       (id)[UIColor colorWithRed:142/255.0 green:151/255.0 blue:201/255.0 alpha:1.0].CGColor,
+                       (id)[UIColor colorWithRed:120/255.0 green:131/255.0 blue:193/255.0 alpha:1.0].CGColor,
+                       nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+   
+    self.view.backgroundColor = [UIColor colorWithRed:164/255.0 green:171/255.0 blue:209/255.0 alpha:1.0] ;
+    self.headerIcon.layer.cornerRadius = YBScreenW/8 ;
+    self.headerIcon.layer.masksToBounds = YES ;
+    self.textFieldBackGround.layer.cornerRadius = 15 ;
+    self.mailText.borderStyle = UITextBorderStyleNone ;
+    self.pswdText.borderStyle = UITextBorderStyleNone ;
+    self.LoginBtn.layer.cornerRadius = 10 ;
+    self.LoginBtn.backgroundColor = [UIColor whiteColor] ;
+    //self.LoginBtn.
+    self.RegisterBtn.backgroundColor = [UIColor colorWithRed:100/255.0 green:114/255.0 blue:184/255.0 alpha:1.0] ;
+    self.RegisterBtn.layer.cornerRadius = 10 ;
+    self.navigationItem.title = @"登录" ;
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -30,16 +45,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,4 +100,8 @@
 }
 */
 
+- (IBAction)beginRegister:(id)sender {
+    
+    [self performSegueWithIdentifier:@"beginRegister" sender:self] ;
+}
 @end
