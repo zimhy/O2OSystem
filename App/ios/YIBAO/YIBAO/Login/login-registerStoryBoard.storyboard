@@ -72,6 +72,9 @@
                                 <state key="normal" title="登录">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BeginLogin:" destination="VUn-9Y-vdE" eventType="touchDown" id="VdF-N2-424"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRv-IR-8u2">
                                 <rect key="frame" x="70" y="369" width="461" height="30"/>

@@ -47,6 +47,25 @@
 		316DCDED1C7DF8AA0034C920 /* class_shengyue.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE71C7DF8AA0034C920 /* class_shengyue.png */; };
 		316DCDEE1C7DF8AA0034C920 /* class_shoutiqin.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE81C7DF8AA0034C920 /* class_shoutiqin.png */; };
 		316DCDEF1C7DF8AA0034C920 /* class_wudao.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE91C7DF8AA0034C920 /* class_wudao.png */; };
+		317A43081C81647C00013B21 /* YBTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43071C81647C00013B21 /* YBTicketsViewController.m */; };
+		317A43141C81657600013B21 /* YBShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43121C81657600013B21 /* YBShopCartViewController.m */; };
+		317A43151C81657600013B21 /* YBShopCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A43131C81657600013B21 /* YBShopCartViewController.xib */; };
+		317A43181C81658500013B21 /* YBMyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43171C81658500013B21 /* YBMyCourseViewController.m */; };
+		317A431C1C8165BF00013B21 /* YBPIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A431B1C8165BF00013B21 /* YBPIMViewController.m */; };
+		317A431E1C81670500013B21 /* YBPIMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A431D1C81670500013B21 /* YBPIMViewController.xib */; };
+		317A43221C81788700013B21 /* YBCouseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43201C81788700013B21 /* YBCouseViewCell.m */; };
+		317A43231C81788700013B21 /* YBCouseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A43211C81788700013B21 /* YBCouseViewCell.xib */; };
+		317A43261C81877100013B21 /* YBTicketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43251C81877100013B21 /* YBTicketViewCell.m */; };
+		317A43291C818EC400013B21 /* YBTicketViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A43281C818EC400013B21 /* YBTicketViewCell.xib */; };
+		317A432C1C8197C800013B21 /* QCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A432B1C8197C800013B21 /* QCheckBox.m */; };
+		317A43311C81981600013B21 /* checkbox1_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 317A432D1C81981600013B21 /* checkbox1_checked.png */; };
+		317A43321C81981600013B21 /* checkbox1_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 317A432E1C81981600013B21 /* checkbox1_checked@2x.png */; };
+		317A43331C81981600013B21 /* checkbox1_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 317A432F1C81981600013B21 /* checkbox1_unchecked.png */; };
+		317A43341C81981600013B21 /* checkbox1_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 317A43301C81981600013B21 /* checkbox1_unchecked@2x.png */; };
+		317A433D1C81D30F00013B21 /* YBCourseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A433B1C81D30F00013B21 /* YBCourseListController.m */; };
+		317A433E1C81D30F00013B21 /* YBCourseListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A433C1C81D30F00013B21 /* YBCourseListController.xib */; };
+		317A43421C81D32900013B21 /* YBCourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43401C81D32900013B21 /* YBCourseDetailController.m */; };
+		317A43431C81D32900013B21 /* YBCourseDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A43411C81D32900013B21 /* YBCourseDetailController.xib */; };
 		318359391C3BA6BE00FAB538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 318359381C3BA6BE00FAB538 /* main.m */; };
 		3183593C1C3BA6BE00FAB538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3183593B1C3BA6BE00FAB538 /* AppDelegate.m */; };
 		3183593F1C3BA6BE00FAB538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3183593E1C3BA6BE00FAB538 /* ViewController.m */; };
@@ -146,6 +165,34 @@
 		316DCDE71C7DF8AA0034C920 /* class_shengyue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_shengyue.png; sourceTree = "<group>"; };
 		316DCDE81C7DF8AA0034C920 /* class_shoutiqin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_shoutiqin.png; sourceTree = "<group>"; };
 		316DCDE91C7DF8AA0034C920 /* class_wudao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_wudao.png; sourceTree = "<group>"; };
+		317A43061C81647C00013B21 /* YBTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBTicketsViewController.h; path = Profile/Tickets/YBTicketsViewController.h; sourceTree = "<group>"; };
+		317A43071C81647C00013B21 /* YBTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBTicketsViewController.m; path = Profile/Tickets/YBTicketsViewController.m; sourceTree = "<group>"; };
+		317A43111C81657600013B21 /* YBShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBShopCartViewController.h; path = Profile/ShopCart/YBShopCartViewController.h; sourceTree = "<group>"; };
+		317A43121C81657600013B21 /* YBShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBShopCartViewController.m; path = Profile/ShopCart/YBShopCartViewController.m; sourceTree = "<group>"; };
+		317A43131C81657600013B21 /* YBShopCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBShopCartViewController.xib; path = Profile/ShopCart/YBShopCartViewController.xib; sourceTree = "<group>"; };
+		317A43161C81658500013B21 /* YBMyCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBMyCourseViewController.h; path = Profile/MyCourse/YBMyCourseViewController.h; sourceTree = "<group>"; };
+		317A43171C81658500013B21 /* YBMyCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBMyCourseViewController.m; path = Profile/MyCourse/YBMyCourseViewController.m; sourceTree = "<group>"; };
+		317A431A1C8165BF00013B21 /* YBPIMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBPIMViewController.h; path = Profile/PersonalInformation/YBPIMViewController.h; sourceTree = "<group>"; };
+		317A431B1C8165BF00013B21 /* YBPIMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBPIMViewController.m; path = Profile/PersonalInformation/YBPIMViewController.m; sourceTree = "<group>"; };
+		317A431D1C81670500013B21 /* YBPIMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBPIMViewController.xib; path = Profile/PersonalInformation/YBPIMViewController.xib; sourceTree = "<group>"; };
+		317A431F1C81788700013B21 /* YBCouseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBCouseViewCell.h; path = Course/YBCouseViewCell.h; sourceTree = "<group>"; };
+		317A43201C81788700013B21 /* YBCouseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBCouseViewCell.m; path = Course/YBCouseViewCell.m; sourceTree = "<group>"; };
+		317A43211C81788700013B21 /* YBCouseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBCouseViewCell.xib; path = Course/YBCouseViewCell.xib; sourceTree = "<group>"; };
+		317A43241C81877100013B21 /* YBTicketViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBTicketViewCell.h; path = Profile/YBTicketViewCell.h; sourceTree = "<group>"; };
+		317A43251C81877100013B21 /* YBTicketViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBTicketViewCell.m; path = Profile/YBTicketViewCell.m; sourceTree = "<group>"; };
+		317A43281C818EC400013B21 /* YBTicketViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBTicketViewCell.xib; path = Profile/Tickets/YBTicketViewCell.xib; sourceTree = "<group>"; };
+		317A432A1C8197C800013B21 /* QCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCheckBox.h; sourceTree = "<group>"; };
+		317A432B1C8197C800013B21 /* QCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCheckBox.m; sourceTree = "<group>"; };
+		317A432D1C81981600013B21 /* checkbox1_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox1_checked.png; sourceTree = "<group>"; };
+		317A432E1C81981600013B21 /* checkbox1_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox1_checked@2x.png"; sourceTree = "<group>"; };
+		317A432F1C81981600013B21 /* checkbox1_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox1_unchecked.png; sourceTree = "<group>"; };
+		317A43301C81981600013B21 /* checkbox1_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox1_unchecked@2x.png"; sourceTree = "<group>"; };
+		317A433A1C81D30F00013B21 /* YBCourseListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBCourseListController.h; path = Course/YBCourseListController.h; sourceTree = "<group>"; };
+		317A433B1C81D30F00013B21 /* YBCourseListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBCourseListController.m; path = Course/YBCourseListController.m; sourceTree = "<group>"; };
+		317A433C1C81D30F00013B21 /* YBCourseListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBCourseListController.xib; path = Course/YBCourseListController.xib; sourceTree = "<group>"; };
+		317A433F1C81D32900013B21 /* YBCourseDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCourseDetailController.h; sourceTree = "<group>"; };
+		317A43401C81D32900013B21 /* YBCourseDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCourseDetailController.m; sourceTree = "<group>"; };
+		317A43411C81D32900013B21 /* YBCourseDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBCourseDetailController.xib; sourceTree = "<group>"; };
 		318359341C3BA6BE00FAB538 /* YIBAO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YIBAO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		318359381C3BA6BE00FAB538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3183593A1C3BA6BE00FAB538 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -264,6 +311,10 @@
 				310A55D91C422E12001EB849 /* shoutiqing_icon.png */,
 				310A55DA1C422E12001EB849 /* huihua_icon.png */,
 				310A55DB1C422E12001EB849 /* shengyue_icon.png */,
+				317A432D1C81981600013B21 /* checkbox1_checked.png */,
+				317A432E1C81981600013B21 /* checkbox1_checked@2x.png */,
+				317A432F1C81981600013B21 /* checkbox1_unchecked.png */,
+				317A43301C81981600013B21 /* checkbox1_unchecked@2x.png */,
 				310A55DC1C422E12001EB849 /* huihua2_icon.png */,
 				310A55DD1C422E12001EB849 /* shexiang_icon.png */,
 				310A55DE1C422E12001EB849 /* -1526172194.png */,
@@ -293,6 +344,88 @@
 				316C39341C7F0D7500F523F9 /* YBProfileTableViewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		317A43021C815FF300013B21 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				316DCDF01C7DFA440034C920 /* Views */,
+				318C54B11C7DFE64005F384F /* YBProfileViewController.h */,
+				318C54B21C7DFE64005F384F /* YBProfileViewController.m */,
+				318C54B31C7DFE64005F384F /* YBProfileViewController.xib */,
+				318C54C11C7EEFFF005F384F /* YBProfileRootController.h */,
+				318C54C21C7EEFFF005F384F /* YBProfileRootController.m */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		317A43031C81602500013B21 /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+				317A43161C81658500013B21 /* YBMyCourseViewController.h */,
+				317A43171C81658500013B21 /* YBMyCourseViewController.m */,
+			);
+			name = MyCourse;
+			sourceTree = "<group>";
+		};
+		317A43041C81603700013B21 /* ShopCart */ = {
+			isa = PBXGroup;
+			children = (
+				317A43111C81657600013B21 /* YBShopCartViewController.h */,
+				317A43121C81657600013B21 /* YBShopCartViewController.m */,
+				317A43131C81657600013B21 /* YBShopCartViewController.xib */,
+			);
+			name = ShopCart;
+			sourceTree = "<group>";
+		};
+		317A43051C81604300013B21 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				317A43271C81888100013B21 /* Views */,
+				317A43061C81647C00013B21 /* YBTicketsViewController.h */,
+				317A43071C81647C00013B21 /* YBTicketsViewController.m */,
+			);
+			name = Tickets;
+			sourceTree = "<group>";
+		};
+		317A43191C81658D00013B21 /* PersonalInfomation */ = {
+			isa = PBXGroup;
+			children = (
+				317A431A1C8165BF00013B21 /* YBPIMViewController.h */,
+				317A431B1C8165BF00013B21 /* YBPIMViewController.m */,
+				317A431D1C81670500013B21 /* YBPIMViewController.xib */,
+			);
+			name = PersonalInfomation;
+			sourceTree = "<group>";
+		};
+		317A43271C81888100013B21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				317A43241C81877100013B21 /* YBTicketViewCell.h */,
+				317A43251C81877100013B21 /* YBTicketViewCell.m */,
+				317A43281C818EC400013B21 /* YBTicketViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		317A43351C81D22E00013B21 /* CourseList */ = {
+			isa = PBXGroup;
+			children = (
+				317A433A1C81D30F00013B21 /* YBCourseListController.h */,
+				317A433B1C81D30F00013B21 /* YBCourseListController.m */,
+				317A433C1C81D30F00013B21 /* YBCourseListController.xib */,
+			);
+			name = CourseList;
+			sourceTree = "<group>";
+		};
+		317A43361C81D23D00013B21 /* CourseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				317A433F1C81D32900013B21 /* YBCourseDetailController.h */,
+				317A43401C81D32900013B21 /* YBCourseDetailController.m */,
+				317A43411C81D32900013B21 /* YBCourseDetailController.xib */,
+			);
+			name = CourseDetail;
 			sourceTree = "<group>";
 		};
 		3183592B1C3BA6BD00FAB538 = {
@@ -366,6 +499,8 @@
 		3183596D1C3BC2B400FAB538 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
+				317A43361C81D23D00013B21 /* CourseDetail */,
+				317A43351C81D22E00013B21 /* CourseList */,
 				31AF57591C4FC9820096086D /* View */,
 				3183597A1C3BF5AD00FAB538 /* YBHomePageController.h */,
 				3183597B1C3BF5AD00FAB538 /* YBHomePageController.m */,
@@ -382,12 +517,11 @@
 		3183596E1C3BC2D900FAB538 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				316DCDF01C7DFA440034C920 /* Views */,
-				318C54B11C7DFE64005F384F /* YBProfileViewController.h */,
-				318C54B21C7DFE64005F384F /* YBProfileViewController.m */,
-				318C54B31C7DFE64005F384F /* YBProfileViewController.xib */,
-				318C54C11C7EEFFF005F384F /* YBProfileRootController.h */,
-				318C54C21C7EEFFF005F384F /* YBProfileRootController.m */,
+				317A43191C81658D00013B21 /* PersonalInfomation */,
+				317A43051C81604300013B21 /* Tickets */,
+				317A43041C81603700013B21 /* ShopCart */,
+				317A43031C81602500013B21 /* MyCourse */,
+				317A43021C815FF300013B21 /* MainPage */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -418,6 +552,8 @@
 		3183597D1C3BF5D700FAB538 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				317A432A1C8197C800013B21 /* QCheckBox.h */,
+				317A432B1C8197C800013B21 /* QCheckBox.m */,
 				3183597F1C3BF61B00FAB538 /* YBAccountTool.m */,
 				3183597E1C3BF61B00FAB538 /* YBAccountTool.h */,
 				313842B11C43F8C30029D637 /* YBLayoutTool.h */,
@@ -458,6 +594,9 @@
 				31AF575A1C4FC9BF0096086D /* YBCourseTypeCell.h */,
 				31AF575B1C4FC9BF0096086D /* YBCourseTypeCell.m */,
 				3154884F1C5D1AF400464C8B /* YBCourseTypeCell.xib */,
+				317A431F1C81788700013B21 /* YBCouseViewCell.h */,
+				317A43201C81788700013B21 /* YBCouseViewCell.m */,
+				317A43211C81788700013B21 /* YBCouseViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -573,6 +712,7 @@
 				310A55FD1C422E12001EB849 /* -431538561.png in Resources */,
 				31B987031C71A737005C2C75 /* ad_2.png in Resources */,
 				310A55FC1C422E12001EB849 /* jita.png in Resources */,
+				317A431E1C81670500013B21 /* YBPIMViewController.xib in Resources */,
 				310A55F01C422E12001EB849 /* shengyue_icon.png in Resources */,
 				3198A2011C807841009007B1 /* class_password.png in Resources */,
 				310A56301C4236A6001EB849 /* LaunchScreen.xib in Resources */,
@@ -584,18 +724,25 @@
 				310A55F41C422E12001EB849 /* shenyue_icon.png in Resources */,
 				310A55FE1C422E12001EB849 /* wudao_icon.png in Resources */,
 				310A562D1C422F5A001EB849 /* Images.xcassets in Resources */,
+				317A43331C81981600013B21 /* checkbox1_unchecked.png in Resources */,
 				3123C4A81C802E2C009E1683 /* my.png in Resources */,
 				316DCDEE1C7DF8AA0034C920 /* class_shoutiqin.png in Resources */,
 				3198A1FD1C807841009007B1 /* cat.png in Resources */,
 				310A55F61C422E12001EB849 /* yujia_icon.png in Resources */,
 				316DCDEF1C7DF8AA0034C920 /* class_wudao.png in Resources */,
 				310A55EE1C422E12001EB849 /* shoutiqing_icon.png in Resources */,
+				317A43311C81981600013B21 /* checkbox1_checked.png in Resources */,
+				317A43431C81D32900013B21 /* YBCourseDetailController.xib in Resources */,
 				310A55F91C422E12001EB849 /* gangqing_icon.png in Resources */,
 				315488501C5D1AF400464C8B /* YBCourseTypeCell.xib in Resources */,
 				316DCDEC1C7DF8AA0034C920 /* class_jiazigu.png in Resources */,
+				317A43291C818EC400013B21 /* YBTicketViewCell.xib in Resources */,
+				317A43231C81788700013B21 /* YBCouseViewCell.xib in Resources */,
 				310A55F81C422E12001EB849 /* datiqing_icon.png in Resources */,
 				310A55F11C422E12001EB849 /* huihua2_icon.png in Resources */,
 				3198A1FF1C807841009007B1 /* class_flag_true.png in Resources */,
+				317A43341C81981600013B21 /* checkbox1_unchecked@2x.png in Resources */,
+				317A43151C81657600013B21 /* YBShopCartViewController.xib in Resources */,
 				31B987041C71A737005C2C75 /* ad_3.png in Resources */,
 				310A55F31C422E12001EB849 /* -1526172194.png in Resources */,
 				316C393E1C7F22DB00F523F9 /* icon_ticket.png in Resources */,
@@ -605,11 +752,13 @@
 				31B987051C71A737005C2C75 /* ad_4.png in Resources */,
 				310A56011C422E12001EB849 /* loading.png in Resources */,
 				31B987021C71A737005C2C75 /* ad_1.png in Resources */,
+				317A43321C81981600013B21 /* checkbox1_checked@2x.png in Resources */,
 				316C393D1C7F22DB00F523F9 /* icon_shopping.png in Resources */,
 				310A55EF1C422E12001EB849 /* huihua_icon.png in Resources */,
 				310A55F71C422E12001EB849 /* -1942196355.png in Resources */,
 				318C54B71C7E053F005F384F /* hugh.png in Resources */,
 				316C39361C7F0D7500F523F9 /* YBProfileTableViewCell.xib in Resources */,
+				317A433E1C81D30F00013B21 /* YBCourseListController.xib in Resources */,
 				31B987061C71A737005C2C75 /* ad_5.png in Resources */,
 				3198A2021C807841009007B1 /* class_username.png in Resources */,
 				318C54B51C7DFE64005F384F /* YBProfileViewController.xib in Resources */,
@@ -646,10 +795,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3198A1F01C806C10009007B1 /* YBRegisterViewController.m in Sources */,
+				317A433D1C81D30F00013B21 /* YBCourseListController.m in Sources */,
 				318359801C3BF61B00FAB538 /* YBAccountTool.m in Sources */,
+				317A431C1C8165BF00013B21 /* YBPIMViewController.m in Sources */,
+				317A43421C81D32900013B21 /* YBCourseDetailController.m in Sources */,
 				313842B01C43F5E30029D637 /* YBImageScrollView.m in Sources */,
+				317A43141C81657600013B21 /* YBShopCartViewController.m in Sources */,
 				3183593F1C3BA6BE00FAB538 /* ViewController.m in Sources */,
 				318359791C3BF58500FAB538 /* YBLoginController.m in Sources */,
+				317A43081C81647C00013B21 /* YBTicketsViewController.m in Sources */,
 				316C39351C7F0D7500F523F9 /* YBProfileTableViewCell.m in Sources */,
 				31AF57541C47B6840096086D /* YBHomePageView.m in Sources */,
 				31AF575D1C4FC9BF0096086D /* YBCourseTypeCell.m in Sources */,
@@ -657,14 +811,18 @@
 				31AF574E1C47A1230096086D /* UIImage+Image.m in Sources */,
 				31AF57511C47AE160096086D /* YBCourseController.m in Sources */,
 				3198A1F31C80777D009007B1 /* YBRegisterDetailViewController.m in Sources */,
+				317A432C1C8197C800013B21 /* QCheckBox.m in Sources */,
+				317A43261C81877100013B21 /* YBTicketViewCell.m in Sources */,
 				313842B31C43F8C30029D637 /* YBLayoutTool.m in Sources */,
 				318359451C3BA6BE00FAB538 /* YIBAO.xcdatamodeld in Sources */,
 				318C54C31C7EEFFF005F384F /* YBProfileRootController.m in Sources */,
 				3183597C1C3BF5AD00FAB538 /* YBHomePageController.m in Sources */,
 				3198A1F61C8077F8009007B1 /* YBRegisterSuccessViewController.m in Sources */,
+				317A43221C81788700013B21 /* YBCouseViewCell.m in Sources */,
 				318359391C3BA6BE00FAB538 /* main.m in Sources */,
 				31A5AD221C6355EA00C770F7 /* UIImage+Scale.m in Sources */,
 				31AF57461C479DEB0096086D /* UIView+Frame.m in Sources */,
+				317A43181C81658500013B21 /* YBMyCourseViewController.m in Sources */,
 				318C54B41C7DFE64005F384F /* YBProfileViewController.m in Sources */,
 				3198A1EC1C80655A009007B1 /* YBLoginRootController.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "YBLoginController.h"
+#import "YBProfileViewController.h"
 
 @interface YBLoginController ()
 
@@ -103,5 +104,10 @@
 - (IBAction)beginRegister:(id)sender {
     
     [self performSegueWithIdentifier:@"beginRegister" sender:self] ;
+}
+
+- (IBAction)BeginLogin:(id)sender {
+    YBProfileViewController *profile = [[YBProfileViewController alloc]initWithNibName:@"YBProfileViewController" bundle:nil] ;
+    [self.navigationController pushViewController:profile animated:YES] ;
 }
 @end

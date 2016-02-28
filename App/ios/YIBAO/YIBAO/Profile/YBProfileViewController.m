@@ -10,6 +10,7 @@
 #import "YBProfileTableViewCell.h"
 #import "UIImage+scale.h"
 
+
 @interface YBProfileViewController ()
 @property NSArray* profileArray ;
 @property NSMutableArray* cellHeights ;
@@ -19,8 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //UIGraphicsBeginImageContext(self.view.frame.size);
-    //[[UIImage imageNamed:@"ad_1"] drawInRect:self.view.bounds];
+//    self.hidesBottomBarWhenPushed = YES ;
     UIImage *image = [[UIImage imageNamed:@"my_bg"]scaleToSize:CGSizeMake(YBScreenW, 0.35*YBScreenH)] ;
    // UIGraphicsEndImageContext();
     
@@ -35,6 +35,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    self.tabBarController.tabBar.hidden = NO ;
+//}
 
 -(void)loadprofileTable
 {
@@ -107,11 +111,45 @@
  5、点击单元格时的处理
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    YBProfileTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
+    //YBProfileTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     
-    NSLog(@"%@",cell.profileSetName.text) ;
-    NSLog(@"%f",cell.frame.size.height);
-    NSLog(@"%f",cell.profileIcon.center.y) ;
+    switch (indexPath.row) {
+        case 0:
+            if(_myCourse == nil)
+            {
+                        _myCourse = [[YBMyCourseViewController alloc]init] ;
+                _myCourse.hidesBottomBarWhenPushed = YES ;
+            }
+            [self.navigationController pushViewController:_myCourse animated:YES ] ;
+            break;
+        case 1:
+            if(_shopCart == nil)
+            {
+                _shopCart = [[YBShopCartViewController alloc]initWithNibName:@"YBShopCartViewController" bundle:nil] ;
+                _shopCart.hidesBottomBarWhenPushed = YES ;
+            }
+            [self.navigationController pushViewController:_shopCart animated:YES] ;
+            break;
+        case 2:
+            if(_tickets == nil)
+            {
+                _tickets =  [[YBTicketsViewController alloc]init ] ;
+                _tickets.hidesBottomBarWhenPushed  = YES ;
+            }
+            [self.navigationController pushViewController:_tickets animated:YES] ;
+            break;
+        case 3:
+            if(_personalInformation == nil)
+            {
+                _personalInformation = [[YBPIMViewController alloc]initWithNibName:@"YBPIMViewController" bundle:nil ] ;
+                _personalInformation.hidesBottomBarWhenPushed = YES ;
+            }
+            [self.navigationController pushViewController: _personalInformation animated:YES] ;
+            break;
+        default:
+            break;
+    }
+    
     
    // NSLog(@"%f",cell.backGroundView.frame.size.width);
 }

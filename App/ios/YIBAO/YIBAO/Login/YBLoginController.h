@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *LoginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *RegisterBtn;
 - (IBAction)beginRegister:(id)sender;
+- (IBAction)BeginLogin:(id)sender;
 
 @end
