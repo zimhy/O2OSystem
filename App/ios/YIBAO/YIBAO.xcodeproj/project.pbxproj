@@ -36,6 +36,18 @@
 		313842B01C43F5E30029D637 /* YBImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 313842AF1C43F5E30029D637 /* YBImageScrollView.m */; };
 		313842B31C43F8C30029D637 /* YBLayoutTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 313842B21C43F8C30029D637 /* YBLayoutTool.m */; };
 		315488501C5D1AF400464C8B /* YBCourseTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3154884F1C5D1AF400464C8B /* YBCourseTypeCell.xib */; };
+		3168DC641C8302DA004455AF /* UITableView+DataSourceBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC5F1C8302DA004455AF /* UITableView+DataSourceBlocks.m */; };
+		3168DC651C8302DA004455AF /* UITableView+DelegateBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC611C8302DA004455AF /* UITableView+DelegateBlocks.m */; };
+		3168DC661C8302DA004455AF /* TableViewWithBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC631C8302DA004455AF /* TableViewWithBlock.m */; };
+		3168DC6B1C830365004455AF /* SelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC691C830365004455AF /* SelectionCell.m */; };
+		3168DC6C1C830365004455AF /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3168DC6A1C830365004455AF /* SelectionCell.xib */; };
+		3168DC6F1C830397004455AF /* dropup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3168DC6D1C830397004455AF /* dropup.png */; };
+		3168DC701C830397004455AF /* dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3168DC6E1C830397004455AF /* dropdown.png */; };
+		3168DC741C8327F1004455AF /* YBCourseIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC731C8327F1004455AF /* YBCourseIntroductionView.m */; };
+		3168DC771C832815004455AF /* YBTeacherDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC761C832815004455AF /* YBTeacherDetailView.m */; };
+		3168DC7A1C83288C004455AF /* YBOganizationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC791C83288C004455AF /* YBOganizationDetail.m */; };
+		3168DC7D1C83291F004455AF /* YBCommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3168DC7C1C83291F004455AF /* YBCommentViewCell.m */; };
+		3168DC7F1C833469004455AF /* CourseIntroductionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3168DC7E1C833469004455AF /* CourseIntroductionView.xib */; };
 		316C39351C7F0D7500F523F9 /* YBProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 316C39331C7F0D7500F523F9 /* YBProfileTableViewCell.m */; };
 		316C39361C7F0D7500F523F9 /* YBProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316C39341C7F0D7500F523F9 /* YBProfileTableViewCell.xib */; };
 		316C393B1C7F22DB00F523F9 /* icon_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 316C39371C7F22DB00F523F9 /* icon_course.png */; };
@@ -47,6 +59,8 @@
 		316DCDED1C7DF8AA0034C920 /* class_shengyue.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE71C7DF8AA0034C920 /* class_shengyue.png */; };
 		316DCDEE1C7DF8AA0034C920 /* class_shoutiqin.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE81C7DF8AA0034C920 /* class_shoutiqin.png */; };
 		316DCDEF1C7DF8AA0034C920 /* class_wudao.png in Resources */ = {isa = PBXBuildFile; fileRef = 316DCDE91C7DF8AA0034C920 /* class_wudao.png */; };
+		317886B11C835F3B00CE096A /* YBOganizationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317886B01C835F3B00CE096A /* YBOganizationDetailView.xib */; };
+		317886B31C8367DE00CE096A /* TeacherDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317886B21C8367DE00CE096A /* TeacherDetail.xib */; };
 		317A43081C81647C00013B21 /* YBTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43071C81647C00013B21 /* YBTicketsViewController.m */; };
 		317A43141C81657600013B21 /* YBShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317A43121C81657600013B21 /* YBShopCartViewController.m */; };
 		317A43151C81657600013B21 /* YBShopCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317A43131C81657600013B21 /* YBShopCartViewController.xib */; };
@@ -153,6 +167,26 @@
 		313842B11C43F8C30029D637 /* YBLayoutTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBLayoutTool.h; path = Tools/YBLayoutTool.h; sourceTree = "<group>"; };
 		313842B21C43F8C30029D637 /* YBLayoutTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBLayoutTool.m; path = Tools/YBLayoutTool.m; sourceTree = "<group>"; };
 		3154884F1C5D1AF400464C8B /* YBCourseTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBCourseTypeCell.xib; path = Views/YBCourseTypeCell.xib; sourceTree = "<group>"; };
+		3168DC5E1C8302DA004455AF /* UITableView+DataSourceBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DataSourceBlocks.h"; sourceTree = "<group>"; };
+		3168DC5F1C8302DA004455AF /* UITableView+DataSourceBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DataSourceBlocks.m"; sourceTree = "<group>"; };
+		3168DC601C8302DA004455AF /* UITableView+DelegateBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DelegateBlocks.h"; sourceTree = "<group>"; };
+		3168DC611C8302DA004455AF /* UITableView+DelegateBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DelegateBlocks.m"; sourceTree = "<group>"; };
+		3168DC621C8302DA004455AF /* TableViewWithBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewWithBlock.h; sourceTree = "<group>"; };
+		3168DC631C8302DA004455AF /* TableViewWithBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewWithBlock.m; sourceTree = "<group>"; };
+		3168DC681C830365004455AF /* SelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionCell.h; sourceTree = "<group>"; };
+		3168DC691C830365004455AF /* SelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionCell.m; sourceTree = "<group>"; };
+		3168DC6A1C830365004455AF /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
+		3168DC6D1C830397004455AF /* dropup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropup.png; sourceTree = "<group>"; };
+		3168DC6E1C830397004455AF /* dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdown.png; sourceTree = "<group>"; };
+		3168DC721C8327F1004455AF /* YBCourseIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBCourseIntroductionView.h; path = Course/YBCourseIntroductionView.h; sourceTree = "<group>"; };
+		3168DC731C8327F1004455AF /* YBCourseIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBCourseIntroductionView.m; path = Course/YBCourseIntroductionView.m; sourceTree = "<group>"; };
+		3168DC751C832815004455AF /* YBTeacherDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBTeacherDetailView.h; sourceTree = "<group>"; };
+		3168DC761C832815004455AF /* YBTeacherDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBTeacherDetailView.m; sourceTree = "<group>"; };
+		3168DC781C83288C004455AF /* YBOganizationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBOganizationDetail.h; path = Course/YBOganizationDetail.h; sourceTree = "<group>"; };
+		3168DC791C83288C004455AF /* YBOganizationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBOganizationDetail.m; path = Course/YBOganizationDetail.m; sourceTree = "<group>"; };
+		3168DC7B1C83291F004455AF /* YBCommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBCommentViewCell.h; path = Course/YBCommentViewCell.h; sourceTree = "<group>"; };
+		3168DC7C1C83291F004455AF /* YBCommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBCommentViewCell.m; path = Course/YBCommentViewCell.m; sourceTree = "<group>"; };
+		3168DC7E1C833469004455AF /* CourseIntroductionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseIntroductionView.xib; path = Course/CourseIntroductionView.xib; sourceTree = "<group>"; };
 		316C39321C7F0D7500F523F9 /* YBProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBProfileTableViewCell.h; path = Profile/YBProfileTableViewCell.h; sourceTree = "<group>"; };
 		316C39331C7F0D7500F523F9 /* YBProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBProfileTableViewCell.m; path = Profile/YBProfileTableViewCell.m; sourceTree = "<group>"; };
 		316C39341C7F0D7500F523F9 /* YBProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBProfileTableViewCell.xib; path = Profile/YBProfileTableViewCell.xib; sourceTree = "<group>"; };
@@ -165,6 +199,8 @@
 		316DCDE71C7DF8AA0034C920 /* class_shengyue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_shengyue.png; sourceTree = "<group>"; };
 		316DCDE81C7DF8AA0034C920 /* class_shoutiqin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_shoutiqin.png; sourceTree = "<group>"; };
 		316DCDE91C7DF8AA0034C920 /* class_wudao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_wudao.png; sourceTree = "<group>"; };
+		317886B01C835F3B00CE096A /* YBOganizationDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBOganizationDetailView.xib; path = Course/YBOganizationDetailView.xib; sourceTree = "<group>"; };
+		317886B21C8367DE00CE096A /* TeacherDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherDetail.xib; sourceTree = "<group>"; };
 		317A43061C81647C00013B21 /* YBTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBTicketsViewController.h; path = Profile/Tickets/YBTicketsViewController.h; sourceTree = "<group>"; };
 		317A43071C81647C00013B21 /* YBTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBTicketsViewController.m; path = Profile/Tickets/YBTicketsViewController.m; sourceTree = "<group>"; };
 		317A43111C81657600013B21 /* YBShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBShopCartViewController.h; path = Profile/ShopCart/YBShopCartViewController.h; sourceTree = "<group>"; };
@@ -311,6 +347,8 @@
 				310A55D91C422E12001EB849 /* shoutiqing_icon.png */,
 				310A55DA1C422E12001EB849 /* huihua_icon.png */,
 				310A55DB1C422E12001EB849 /* shengyue_icon.png */,
+				3168DC6D1C830397004455AF /* dropup.png */,
+				3168DC6E1C830397004455AF /* dropdown.png */,
 				317A432D1C81981600013B21 /* checkbox1_checked.png */,
 				317A432E1C81981600013B21 /* checkbox1_checked@2x.png */,
 				317A432F1C81981600013B21 /* checkbox1_unchecked.png */,
@@ -334,6 +372,34 @@
 				310A55EC1C422E12001EB849 /* loading.png */,
 			);
 			path = "素材";
+			sourceTree = "<group>";
+		};
+		3168DC671C830358004455AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3168DC681C830365004455AF /* SelectionCell.h */,
+				3168DC691C830365004455AF /* SelectionCell.m */,
+				3168DC6A1C830365004455AF /* SelectionCell.xib */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3168DC711C8325FB004455AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3168DC721C8327F1004455AF /* YBCourseIntroductionView.h */,
+				3168DC731C8327F1004455AF /* YBCourseIntroductionView.m */,
+				3168DC751C832815004455AF /* YBTeacherDetailView.h */,
+				3168DC761C832815004455AF /* YBTeacherDetailView.m */,
+				3168DC781C83288C004455AF /* YBOganizationDetail.h */,
+				3168DC791C83288C004455AF /* YBOganizationDetail.m */,
+				3168DC7B1C83291F004455AF /* YBCommentViewCell.h */,
+				3168DC7C1C83291F004455AF /* YBCommentViewCell.m */,
+				3168DC7E1C833469004455AF /* CourseIntroductionView.xib */,
+				317886B01C835F3B00CE096A /* YBOganizationDetailView.xib */,
+				317886B21C8367DE00CE096A /* TeacherDetail.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		316DCDF01C7DFA440034C920 /* Views */ = {
@@ -421,6 +487,7 @@
 		317A43361C81D23D00013B21 /* CourseDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3168DC711C8325FB004455AF /* Views */,
 				317A433F1C81D32900013B21 /* YBCourseDetailController.h */,
 				317A43401C81D32900013B21 /* YBCourseDetailController.m */,
 				317A43411C81D32900013B21 /* YBCourseDetailController.xib */,
@@ -454,6 +521,7 @@
 		318359361C3BA6BE00FAB538 /* YIBAO */ = {
 			isa = PBXGroup;
 			children = (
+				3168DC671C830358004455AF /* Common */,
 				3198A1ED1C806AB1009007B1 /* Register */,
 				31AF57471C479E080096086D /* Others */,
 				3183597D1C3BF5D700FAB538 /* Tools */,
@@ -553,6 +621,12 @@
 			isa = PBXGroup;
 			children = (
 				317A432A1C8197C800013B21 /* QCheckBox.h */,
+				3168DC5E1C8302DA004455AF /* UITableView+DataSourceBlocks.h */,
+				3168DC5F1C8302DA004455AF /* UITableView+DataSourceBlocks.m */,
+				3168DC601C8302DA004455AF /* UITableView+DelegateBlocks.h */,
+				3168DC611C8302DA004455AF /* UITableView+DelegateBlocks.m */,
+				3168DC621C8302DA004455AF /* TableViewWithBlock.h */,
+				3168DC631C8302DA004455AF /* TableViewWithBlock.m */,
 				317A432B1C8197C800013B21 /* QCheckBox.m */,
 				3183597F1C3BF61B00FAB538 /* YBAccountTool.m */,
 				3183597E1C3BF61B00FAB538 /* YBAccountTool.h */,
@@ -721,6 +795,7 @@
 				310A55FA1C422E12001EB849 /* baleiwu_icon.png in Resources */,
 				310A55F21C422E12001EB849 /* shexiang_icon.png in Resources */,
 				3123C4A71C802E2C009E1683 /* ic_default_adimage.jpg in Resources */,
+				3168DC6C1C830365004455AF /* SelectionCell.xib in Resources */,
 				310A55F41C422E12001EB849 /* shenyue_icon.png in Resources */,
 				310A55FE1C422E12001EB849 /* wudao_icon.png in Resources */,
 				310A562D1C422F5A001EB849 /* Images.xcassets in Resources */,
@@ -730,6 +805,7 @@
 				3198A1FD1C807841009007B1 /* cat.png in Resources */,
 				310A55F61C422E12001EB849 /* yujia_icon.png in Resources */,
 				316DCDEF1C7DF8AA0034C920 /* class_wudao.png in Resources */,
+				3168DC6F1C830397004455AF /* dropup.png in Resources */,
 				310A55EE1C422E12001EB849 /* shoutiqing_icon.png in Resources */,
 				317A43311C81981600013B21 /* checkbox1_checked.png in Resources */,
 				317A43431C81D32900013B21 /* YBCourseDetailController.xib in Resources */,
@@ -739,6 +815,7 @@
 				317A43291C818EC400013B21 /* YBTicketViewCell.xib in Resources */,
 				317A43231C81788700013B21 /* YBCouseViewCell.xib in Resources */,
 				310A55F81C422E12001EB849 /* datiqing_icon.png in Resources */,
+				317886B31C8367DE00CE096A /* TeacherDetail.xib in Resources */,
 				310A55F11C422E12001EB849 /* huihua2_icon.png in Resources */,
 				3198A1FF1C807841009007B1 /* class_flag_true.png in Resources */,
 				317A43341C81981600013B21 /* checkbox1_unchecked@2x.png in Resources */,
@@ -751,6 +828,7 @@
 				3123C4A41C802C87009E1683 /* login-registerStoryBoard.storyboard in Resources */,
 				31B987051C71A737005C2C75 /* ad_4.png in Resources */,
 				310A56011C422E12001EB849 /* loading.png in Resources */,
+				3168DC701C830397004455AF /* dropdown.png in Resources */,
 				31B987021C71A737005C2C75 /* ad_1.png in Resources */,
 				317A43321C81981600013B21 /* checkbox1_checked@2x.png in Resources */,
 				316C393D1C7F22DB00F523F9 /* icon_shopping.png in Resources */,
@@ -761,9 +839,11 @@
 				317A433E1C81D30F00013B21 /* YBCourseListController.xib in Resources */,
 				31B987061C71A737005C2C75 /* ad_5.png in Resources */,
 				3198A2021C807841009007B1 /* class_username.png in Resources */,
+				3168DC7F1C833469004455AF /* CourseIntroductionView.xib in Resources */,
 				318C54B51C7DFE64005F384F /* YBProfileViewController.xib in Resources */,
 				318359471C3BA6BE00FAB538 /* Assets.xcassets in Resources */,
 				316C393B1C7F22DB00F523F9 /* icon_course.png in Resources */,
+				317886B11C835F3B00CE096A /* YBOganizationDetailView.xib in Resources */,
 				310A56001C422E12001EB849 /* button_back.png in Resources */,
 				316C393C1C7F22DB00F523F9 /* icon_personal.png in Resources */,
 				316DCDEB1C7DF8AA0034C920 /* class_gangqin.png in Resources */,
@@ -797,6 +877,7 @@
 				3198A1F01C806C10009007B1 /* YBRegisterViewController.m in Sources */,
 				317A433D1C81D30F00013B21 /* YBCourseListController.m in Sources */,
 				318359801C3BF61B00FAB538 /* YBAccountTool.m in Sources */,
+				3168DC7A1C83288C004455AF /* YBOganizationDetail.m in Sources */,
 				317A431C1C8165BF00013B21 /* YBPIMViewController.m in Sources */,
 				317A43421C81D32900013B21 /* YBCourseDetailController.m in Sources */,
 				313842B01C43F5E30029D637 /* YBImageScrollView.m in Sources */,
@@ -808,15 +889,20 @@
 				31AF57541C47B6840096086D /* YBHomePageView.m in Sources */,
 				31AF575D1C4FC9BF0096086D /* YBCourseTypeCell.m in Sources */,
 				3183593C1C3BA6BE00FAB538 /* AppDelegate.m in Sources */,
+				3168DC641C8302DA004455AF /* UITableView+DataSourceBlocks.m in Sources */,
+				3168DC651C8302DA004455AF /* UITableView+DelegateBlocks.m in Sources */,
 				31AF574E1C47A1230096086D /* UIImage+Image.m in Sources */,
 				31AF57511C47AE160096086D /* YBCourseController.m in Sources */,
+				3168DC6B1C830365004455AF /* SelectionCell.m in Sources */,
 				3198A1F31C80777D009007B1 /* YBRegisterDetailViewController.m in Sources */,
+				3168DC771C832815004455AF /* YBTeacherDetailView.m in Sources */,
 				317A432C1C8197C800013B21 /* QCheckBox.m in Sources */,
 				317A43261C81877100013B21 /* YBTicketViewCell.m in Sources */,
 				313842B31C43F8C30029D637 /* YBLayoutTool.m in Sources */,
 				318359451C3BA6BE00FAB538 /* YIBAO.xcdatamodeld in Sources */,
 				318C54C31C7EEFFF005F384F /* YBProfileRootController.m in Sources */,
 				3183597C1C3BF5AD00FAB538 /* YBHomePageController.m in Sources */,
+				3168DC661C8302DA004455AF /* TableViewWithBlock.m in Sources */,
 				3198A1F61C8077F8009007B1 /* YBRegisterSuccessViewController.m in Sources */,
 				317A43221C81788700013B21 /* YBCouseViewCell.m in Sources */,
 				318359391C3BA6BE00FAB538 /* main.m in Sources */,
@@ -824,6 +910,8 @@
 				31AF57461C479DEB0096086D /* UIView+Frame.m in Sources */,
 				317A43181C81658500013B21 /* YBMyCourseViewController.m in Sources */,
 				318C54B41C7DFE64005F384F /* YBProfileViewController.m in Sources */,
+				3168DC7D1C83291F004455AF /* YBCommentViewCell.m in Sources */,
+				3168DC741C8327F1004455AF /* YBCourseIntroductionView.m in Sources */,
 				3198A1EC1C80655A009007B1 /* YBLoginRootController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,10 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBCourseListController">
             <connections>
+                <outlet property="courseList" destination="uu9-PT-deM" id="UKt-4V-7wl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,62 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="filterView" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-VY-mOs" userLabel="filterView" colorLabel="IBBuiltInLabel-Red">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-sR-e6C">
+                            <rect key="frame" x="16" y="5" width="30" height="30"/>
+                            <state key="normal" title="星级"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtH-vA-7dm">
+                            <rect key="frame" x="464" y="5" width="60" height="30"/>
+                            <state key="normal" title="考试性别"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWu-py-hN6">
+                            <rect key="frame" x="533" y="5" width="60" height="30"/>
+                            <state key="normal" title="智能排序"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9k-B7-5IM">
+                            <rect key="frame" x="81" y="5" width="60" height="30"/>
+                            <state key="normal" title="授课方式"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cY4-sR-e6C" firstAttribute="centerY" secondItem="Fnx-VY-mOs" secondAttribute="centerY" id="2Su-rI-jYE"/>
+                        <constraint firstItem="cY4-sR-e6C" firstAttribute="height" secondItem="Fnx-VY-mOs" secondAttribute="height" id="2wa-wl-nAK"/>
+                        <constraint firstItem="cY4-sR-e6C" firstAttribute="width" secondItem="Fnx-VY-mOs" secondAttribute="width" multiplier="0.25" id="7m2-tg-DlN"/>
+                        <constraint firstItem="K9k-B7-5IM" firstAttribute="width" secondItem="cY4-sR-e6C" secondAttribute="width" id="CRt-rC-5IK"/>
+                        <constraint firstItem="K9k-B7-5IM" firstAttribute="leading" secondItem="cY4-sR-e6C" secondAttribute="trailing" id="H1W-2V-suM"/>
+                        <constraint firstItem="qWu-py-hN6" firstAttribute="centerY" secondItem="Fnx-VY-mOs" secondAttribute="centerY" id="OKn-5Z-KXF"/>
+                        <constraint firstItem="cY4-sR-e6C" firstAttribute="leading" secondItem="Fnx-VY-mOs" secondAttribute="leading" id="PQ1-W4-aXw"/>
+                        <constraint firstItem="BtH-vA-7dm" firstAttribute="leading" secondItem="K9k-B7-5IM" secondAttribute="trailing" id="agZ-bF-sak"/>
+                        <constraint firstItem="BtH-vA-7dm" firstAttribute="width" secondItem="cY4-sR-e6C" secondAttribute="width" id="bZ8-NT-LaN"/>
+                        <constraint firstItem="K9k-B7-5IM" firstAttribute="centerY" secondItem="Fnx-VY-mOs" secondAttribute="centerY" id="d8n-az-KeL"/>
+                        <constraint firstItem="BtH-vA-7dm" firstAttribute="height" secondItem="Fnx-VY-mOs" secondAttribute="height" id="l8J-qI-sVe"/>
+                        <constraint firstItem="qWu-py-hN6" firstAttribute="leading" secondItem="BtH-vA-7dm" secondAttribute="trailing" id="qCj-jt-s6Z"/>
+                        <constraint firstItem="qWu-py-hN6" firstAttribute="height" secondItem="Fnx-VY-mOs" secondAttribute="height" id="rPQ-aQ-jHw"/>
+                        <constraint firstItem="qWu-py-hN6" firstAttribute="width" secondItem="cY4-sR-e6C" secondAttribute="width" id="rSp-Nc-WJC"/>
+                        <constraint firstItem="BtH-vA-7dm" firstAttribute="centerY" secondItem="Fnx-VY-mOs" secondAttribute="centerY" id="sON-Ek-iU2"/>
+                        <constraint firstItem="K9k-B7-5IM" firstAttribute="height" secondItem="Fnx-VY-mOs" secondAttribute="height" id="y2L-Nv-FeY"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uu9-PT-deM">
+                    <rect key="frame" x="180" y="131" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Fnx-VY-mOs" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="86H-8Q-xUh"/>
+                <constraint firstItem="uu9-PT-deM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Dcx-EQ-uKL"/>
+                <constraint firstItem="uu9-PT-deM" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="GJz-hf-ifP"/>
+                <constraint firstItem="uu9-PT-deM" firstAttribute="top" secondItem="Fnx-VY-mOs" secondAttribute="bottom" id="NZm-Ig-4ml"/>
+                <constraint firstAttribute="bottom" secondItem="uu9-PT-deM" secondAttribute="bottom" id="n0g-yz-T96"/>
+                <constraint firstItem="Fnx-VY-mOs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r8S-7h-tYV"/>
+                <constraint firstItem="Fnx-VY-mOs" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="tgi-t7-JbO"/>
+            </constraints>
             <point key="canvasLocation" x="350" y="363"/>
         </view>
     </objects>

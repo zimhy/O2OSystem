@@ -7,8 +7,17 @@
 //
 
 #import "YBCourseDetailController.h"
+#import "YBCourseIntroductionView.h" 
+#import "YBTeacherDetailView.h" 
+#import "YBOganizationDetail.h"
+#import "YBCommentViewCell.h"
 
 @interface YBCourseDetailController ()
+@property YBCourseIntroductionView *courseInfo ;
+@property YBTeacherDetailView *teacherDetail ;
+@property YBOganizationDetail *OgnDetail ;
+@property UITableView *Comments ;
+@property UIView *subView;
 
 @end
 
@@ -16,8 +25,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    NSArray* objList = [[NSBundle mainBundle] loadNibNamed:@"CourseIntroductionView" owner:self options:nil];
+    _courseInfo = [objList firstObject] ;
+    _courseInfo.frame =CGRectMake(0, 0, YBScreenW, 300) ;
+    [_detailContainer addSubview:_courseInfo ] ;
+    
+    objList = [[NSBundle mainBundle] loadNibNamed:@"TeacherDetail" owner:self options:nil];
+    _teacherDetail = [objList objectAtIndex:0 ] ; ;
+    _teacherDetail.frame =CGRectMake(0, 300, YBScreenW, 300) ;
+    [_detailContainer addSubview:_teacherDetail ] ;
+    objList = [[NSBundle mainBundle] loadNibNamed:@"YBOganizationDetailView" owner:self options:nil];
+    _OgnDetail = [objList objectAtIndex:0 ]  ;
+    _OgnDetail.frame =CGRectMake(0, 600, YBScreenW, 180) ;
+    [_detailContainer addSubview:_OgnDetail ] ;
 }
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    NSLog(@"My view frame: %@", NSStringFromCGRect(_subView.frame));
+
+    NSLog(@"My view frame: %@", NSStringFromCGRect(_OgnDetail.frame));
+    NSLog(@"My view frame: %@", NSStringFromCGRect(_OgnDetail.image .frame));
+}
+-(void) viewWillAppear:(BOOL)animated
+{
+    _detailContainer.contentSize = CGSizeMake(YBScreenW, 1000) ;
+}
+    
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

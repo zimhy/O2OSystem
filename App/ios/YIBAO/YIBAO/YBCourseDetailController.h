@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface YBCourseDetailController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *detailContainer;
+
 
 @end

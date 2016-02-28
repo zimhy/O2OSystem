@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBCourseDetailController">
             <connections>
+                <outlet property="detailContainer" destination="cz8-hf-tzW" id="FWg-k3-n5n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIActionSheet">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-WB-3m1">
+                    <rect key="frame" x="0.0" y="545" width="600" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gT9-KA-8u8">
+                            <rect key="frame" x="324" y="13" width="268" height="30"/>
+                            <state key="normal" title="添加至购物车"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6Z-Ba-udb">
+                            <rect key="frame" x="8" y="13" width="308" height="30"/>
+                            <state key="normal" title="预报名"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gT9-KA-8u8" firstAttribute="height" secondItem="nXh-WB-3m1" secondAttribute="height" id="5q4-8l-JSj"/>
+                        <constraint firstItem="U6Z-Ba-udb" firstAttribute="leading" secondItem="nXh-WB-3m1" secondAttribute="leading" id="8Je-cE-MqU"/>
+                        <constraint firstItem="U6Z-Ba-udb" firstAttribute="height" secondItem="nXh-WB-3m1" secondAttribute="height" id="Ahc-eh-XL5"/>
+                        <constraint firstItem="gT9-KA-8u8" firstAttribute="width" secondItem="nXh-WB-3m1" secondAttribute="width" multiplier="0.5" id="EqS-jw-1Jp"/>
+                        <constraint firstItem="U6Z-Ba-udb" firstAttribute="width" secondItem="nXh-WB-3m1" secondAttribute="width" multiplier="0.5" id="SWS-zG-Iyb"/>
+                        <constraint firstItem="gT9-KA-8u8" firstAttribute="centerY" secondItem="nXh-WB-3m1" secondAttribute="centerY" id="Tv3-eL-QdO"/>
+                        <constraint firstItem="U6Z-Ba-udb" firstAttribute="centerY" secondItem="nXh-WB-3m1" secondAttribute="centerY" id="ocq-S2-qFq"/>
+                        <constraint firstAttribute="trailing" secondItem="gT9-KA-8u8" secondAttribute="trailing" id="wOG-cD-YjP"/>
+                    </constraints>
+                    <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="0.0" y="545" width="400" height="55"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="0.0" y="745" width="800" height="55"/>
+                    </variation>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cz8-hf-tzW">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="537"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cz8-hf-tzW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2wA-dW-FbX"/>
+                <constraint firstItem="cz8-hf-tzW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LJ6-Xd-pyf"/>
+                <constraint firstItem="nXh-WB-3m1" firstAttribute="centerX" secondItem="cz8-hf-tzW" secondAttribute="centerX" id="MYH-Iz-nRr"/>
+                <constraint firstItem="cz8-hf-tzW" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Xly-56-FE3"/>
+                <constraint firstItem="nXh-WB-3m1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cT2-Cf-zbh"/>
+                <constraint firstItem="nXh-WB-3m1" firstAttribute="top" secondItem="cz8-hf-tzW" secondAttribute="bottom" id="gtL-18-fiu"/>
+                <constraint firstAttribute="bottom" secondItem="nXh-WB-3m1" secondAttribute="bottom" id="k2j-sJ-oUP"/>
+                <constraint firstItem="nXh-WB-3m1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="vOA-yQ-k2L"/>
+            </constraints>
+            <point key="canvasLocation" x="156" y="101"/>
+        </view>
+        <view contentMode="scaleToFill" id="LD1-XY-eED">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="169" y="801"/>
         </view>
     </objects>
 </document>

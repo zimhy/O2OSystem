@@ -10,6 +10,7 @@
 #import "YBHomePageView.h"
 #import "YBImageScrollView.h"
 #import "YBCourseTypeCell.h"
+#import "YBCourseListController.h"
 #import <UIKit/UIKit.h>
 //#import "header"
 
@@ -213,13 +214,9 @@
  5、点击单元格时的处理
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    YBCourseTypeCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
-    
-    NSLog(@"%@",cell.courseTypeName.text) ;
-    NSLog(@"%f",cell.frame.size.height);
-
-        NSLog(@"%f",cell.backGroundView.frame.size.width);
-}
+       YBCourseListController *list = [[YBCourseListController alloc]init] ;
+    [self.navigationController pushViewController:list animated:YES ] ; 
+   }
 
 
 @end
