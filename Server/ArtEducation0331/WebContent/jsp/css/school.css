@@ -1,0 +1,27 @@
+button {
+  width: 130px;
+}
+thead th {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fulltime{
+  background-color: #fff;
+}
+.parttime{
+  background-color: #bbb;
+}
+img {
+  height:100%;
+  width:100%;
+}
+.tinfo td {
+  font-size: 18px;
+  line-height: 3em;
+  padding: 5px;
+}

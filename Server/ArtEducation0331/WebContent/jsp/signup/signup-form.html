@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+        <div class="page-header text-center">
+            <div id="status-buttons" class="text-center">
+                <a ui-sref-active="active" ui-sref=".basic" class="active"><span>1</span>基本信息</a>
+                <a ui-sref-active="active" ui-sref=".idinfo"><span>2</span>身份信息</a>
+                <a ui-sref-active="active" ui-sref=".verification"><span>3</span>审核</a>
+                <a id="none"><span>4</span>通过</a>
+            </div>
+        </div>
+        <form id="signup-form" ng-submit="">
+            <div id="form-views" ui-view></div>
+        </form>
+ 
+ 
+    <pre>
+        {{ formData }}
+    </pre>
+ 
+ 
+</div>
+</div>

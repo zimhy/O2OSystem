@@ -1,0 +1,74 @@
+header {
+  background-color: #4d99f5;
+}
+.logo {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 100px;
+  width: 100px;
+}
+.slogan {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: bottom;
+  font-size: 28px;
+  color: #fff;
+}
+
+.login {
+  margin-bottom: 25px;
+  padding: 15px;
+  text-align: end;
+}
+.login a {
+  color:white;
+  margin-right: 10px;
+}
+
+.buttons {
+  padding: 15px;
+  text-align: end;
+}
+
+.buttons a {
+  width: 98px;
+  font-size: 18px;
+  margin-right: 13px;
+  color: #333;
+  border-radius: 10px; 
+}
+.buttons a:nth-child(1) {
+  background-color: #FE9B98;
+}
+.buttons a:nth-child(1):hover,
+.buttons a:nth-child(1):active,
+.buttons a:nth-child(1):focus{
+  background-color: #FA474A;
+}
+
+.buttons a:nth-child(2) {
+  background-color: #FFD55E;
+}
+.buttons a:nth-child(2):active,
+.buttons a:nth-child(2):hover,
+.buttons a:nth-child(2):focus{
+  background-color: #FDBB1D;
+}
+
+.buttons a:nth-child(3) {
+  background-color: #A6D692;
+}
+.buttons a:nth-child(3):active,
+.buttons a:nth-child(3):hover,
+.buttons a:nth-child(3):focus{
+  background-color: #5DD130;
+}
+
+.buttons a:nth-child(4){
+  background-color: #F4AD6A;
+}
+.buttons a:nth-child(4):active,
+.buttons a:nth-child(4):hover,
+.buttons a:nth-child(4):hover{
+  background-color: #EE731B;
+}
