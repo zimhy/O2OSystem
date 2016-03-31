@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.mapper.StudentMapper" >
+
+   <!-- 根据学生的用户名来登录 -->
+    <select id="findStudentByName"  parameterType="java.lang.String" resultType="studentcustom">
+        select studentId,password from t_student where studentName=#{value}
+    </select>
+    
+    <!--  根据学生的邮箱或用户名，来查询学生的信息-->
+    <select id="findStudentByNameOrEmail" parameterType="java.lang.String" resultType="studentCustom">
+       select studentId,password from t_student where email=#{value} or studentName=#{value}
+    </select>
+ 
+ 	<!-- 根据学生Id查询学生信息 -->	
+ 	<select id="findStudentById" parameterType="java.lang.Integer" resultType="studentCustom">
+ 		select * from t_student where studentId = #{studentId}
+ 	</select>
+ 	
+ 	<!-- 更新学生信息 -->
+ 	<update id="updateStudent" parameterType="studentCustom" >
+ 		UPDATE t_student SET  studentAge= #{studentAge},phone = #{phone},preference = #{preference}
+		WHERE studentId = #{studentId}
+ 	</update>
+ 	
+ 	
+ 	<!-- 查询学生所有优惠券信息-->
+ 	<select id="findDiscountsBySId" parameterType="java.lang.Integer" resultType="discountCustom">
+ 	     select t_discount.*,t_course.courseName,t_course.mainImage,t_teacher.teacherName,t_organization.organizationName
+ 	     from t_discount,t_course,t_teacher,t_organization
+ 	     where t_discount.studentId=#{studentId} and t_discount.courseId=t_course.courseId  
+ 	     and  t_course.teacherId=t_teacher.teacherId and t_teacher.organizationId=t_organization.organizationId
+ 	</select>
+ 	
+ 	<!--查询优惠券详细信息 -->
+ 	<select id="findDiscountDetailByDId" parameterType="java.lang.Integer" resultType="discountDetaileCustom">
+ 	   select t_discount.discountCode,t_course.courseName,t_course.discountUseInfo
+ 	   from   t_discount,t_course
+ 	   where t_discount.discountId=#{discountId} and  t_discount.courseId=t_course.courseId
+ 	 </select>
+ 	 
+ 	 <!--查询购物车列表  -->
+ 	 <select id="findOrderscarListBySId" parameterType="java.lang.Integer" resultType="ordersCarList">
+ 	    select  t_ordersCar.courseId,t_course.courseName,t_course.mainImage,t_teacher.teacherName,t_organization.organizationAddr,t_organization.organizationName
+ 	    from   t_ordersCar ,t_course,t_teacher,t_organization
+ 	    where  t_ordersCar.studentId=#{studentId} and t_ordersCar.courseId=t_course.courseId and t_course.teacherId=t_teacher.teacherId
+ 	           and  t_teacher.organizationId=t_organization.organizationId
+ 	 </select>
+ 	
+ 	<!-- 注册学生信息，并返回studentId -->
+ 	<insert id="insertStudent" parameterType="studentCustom" >
+ 	 <selectKey keyProperty="studentId" order="AFTER" resultType="java.lang.Integer">
+        SELECT LAST_INSERT_ID() 
+     </selectKey>
+ 	    insert into t_student(studentName,email,password,realName,gender,studentAge,preference,phone) 
+ 	    values(#{studentName},#{email},#{password},#{realName},#{gender},#{studentAge},#{preference},#{phone})
+ 	</insert>
+ 	
+ 	<!--学生将课程添加进购物车  -->
+     <insert id="addToOrdersCar" parameterType="ordersCarCustom">
+        <selectKey keyProperty="ordersCarId" order="AFTER" resultType="java.lang.Integer">
+           SELECT LAST_INSERT_ID() 
+        </selectKey>
+        insert into t_orderscar(studentId,courseId,time,count,totalPrice)
+        values(#{studentId},#{courseId},#{time},#{count},#{totalPrice})
+     </insert>
+     
+     
+     <!--根据课程id，查询课程单价  -->
+ 	<select id="findCoursePriceById" parameterType="java.lang.Integer" resultType="courseCustom">
+ 	    select coursePrice
+ 	    from t_course
+ 	    where courseId=#{courseId}
+ 	</select>
+ 	
+ 	<!-- 查询购物车信息 -->
+ 	<select id="queryOrdersCar" parameterType="java.lang.Integer" resultType="ordersCarInfo">
+ 	     select t_orderscar.ordersCarId,t_orderscar.courseId,courseName,teacherName,organizationName
+ 	     from t_orderscar,t_course,t_teacher,t_organization
+ 	     where t_orderscar.studentId=#{studentId} and t_orderscar.courseId=t_course.courseId and
+ 	           t_course.teacherId=t_teacher.teacherId  and t_teacher.organizationId=t_organization.organizationId
+ 	</select>
+ 	
+ 	
+ 	<!--根据课程id和学生id，查询购物车中该学生是否已经添加该课程  -->
+ 	<select id="findCarCourseByCourseId" parameterType="ordersCarCustom" resultType="ordersCarCustom">
+ 	   select * 
+ 	   from t_orderscar
+ 	   where courseId=#{courseId} and studentId=#{studentId}
+ 	</select>
+ 	
+ 	<!-- 根据学生id和课程id，更新购物车信息 -->
+ 	<update id="updateOrdersCar" parameterType="ordersCarCustom">
+ 	    update t_orderscar
+ 	    set count=#{count},totalPrice=#{totalPrice},time=#{time}
+ 	    where studentId=#{studentId} and courseId=#{courseId}
+ 	</update>
+ 	
+ 	<!--删除购物车中的课程  -->
+ 	<delete id="deleteOrdersCar" parameterType="java.lang.Integer">
+ 	   delete 
+ 	   from t_orderscar
+ 	   where ordersCarId=#{ordersCarId}
+ 	</delete>
+ 	
+ 	<!--获取优惠券信息  -->
+ 	<select id="getDiscount" parameterType="java.lang.Integer" resultType="myDiscountInfo">
+ 	   select t_discount.courseId,discountStatus,discountCode,t_course.courseName,t_teacher.teacherName,
+ 	           t_organization.organizationName
+ 	   from t_discount,t_course,t_teacher,t_organization
+ 	   where t_discount.studentId=#{studentId} and t_discount.courseId=t_course.courseId and 
+ 	      t_course.teacherId=t_teacher.teacherId and t_teacher.organizationId=t_organization.organizationId
+ 	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

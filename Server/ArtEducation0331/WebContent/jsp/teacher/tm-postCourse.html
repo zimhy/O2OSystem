@@ -1,0 +1,49 @@
+<div class="form-group">
+  <label for="courseName">课程名称</label>
+  <input type="text" class="form-control" name="courseName" ng-model="course.name" required>
+</div>
+<div class="form-group">
+  <label for="classHours">课时数</label>
+  <input type="text" class="form-control" name="classHours" ng-model="course.hours" required>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <p style="font-weight: bold;font-size: 20px;margin-top: 50px;">选择时间</p>
+  </div>
+  <div class="col-md-8">
+    <div class="form-group">
+      <label for="startDate">课程开始时间</label>
+      <input type="text" name="startDate" ng-model="course.startDate" ui-date required/>
+    </div>
+    <div class="form-group">
+      <label for="endDate">课程结束时间</label>
+      <input type="text" name="endDate" ng-model="course.endDate" ui-date required/>
+    </div>
+    <div class="form-group">
+      <label for="weekday">每周上课时间</label>
+      <input type="text" name="weekday" ng-model="course.weekday" required/>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="classAddress">上课地点</label>
+  <input type="text" class="form-control" name="classAddress" ng-model="course.address" required>
+</div>
+<div class="form-group">
+  <label for="classDesc">课程描述</label>
+  <textarea class="form-control" name="classDesc" ng-model="course.desc" required></textarea>
+</div>
+<div class="form-group">
+  <label for="classPic">课程图片</label>
+  <div>
+    <div id="classPic1" class="classPic"></div>
+    <div id="classPic2" class="classPic"></div>
+  </div>
+  <input type="file" name="classPic">
+</div>
+
+<div class="form-group row">
+  <div class="col-md-4 col-md-offset-4">
+    <button class="btn btn-block btn-danger" ng-click="profileSubmit()">提交</button>
+  </div>
+</div>

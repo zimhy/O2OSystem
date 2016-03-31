@@ -1,0 +1,47 @@
+.sidebar {
+  text-align: center;
+  border-right: 1px solid darkgray;
+}
+.info {
+  margin: 20px 0;
+  /*text-align: center;*/
+}
+.usrname {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 80px;
+}
+.avatar {
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+.side-nav a {
+  display: block;
+  margin: 15px;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid #00b976;
+  border-radius: 10px;
+  color: #00b976;
+
+}
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active
+{
+  text-decoration: none;
+  background-color: #00b976;
+  color: #fff;
+}
+
+.main {
+  margin: 20px 0;
+}
+/*======identity==========*/
+.pic {
+  height: 150px;
+  width: 300px;
+}
