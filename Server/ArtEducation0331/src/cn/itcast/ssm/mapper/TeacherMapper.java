@@ -10,4 +10,7 @@ public interface TeacherMapper {
 //	根据教师用户名或邮箱查询教师的信息，教师的邮箱也是唯一的
 	public TeacherCustom findTeacherByNameOrEmail(String userName);
 	
+//	编辑教师认证信息
+	public void editTeacherDiplomaInfo(TeacherCustom teacherCustom);
+	
 }

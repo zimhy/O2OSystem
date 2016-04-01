@@ -6,9 +6,15 @@ public class StudentView {
 	private String email;
 	private String headPortraits;
 	private Integer studentAge;
-	private String realName;
-	private String gender;
+	private String phone;
 	private String preference;
+
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public Integer getStudentId() {
 		return studentId;
 	}
@@ -40,29 +46,11 @@ public class StudentView {
 	public void setStudentAge(Integer studentAge) {
 		this.studentAge = studentAge;
 	}
-	public String getRealName() {
-		return realName;
-	}
-	public void setRealName(String realName) {
-		this.realName = realName;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+	
 	public String getPreference() {
 		return preference;
 	}
 	public void setPreference(String preference) {
 		this.preference = preference;
 	}
-	@Override
-	public String toString() {
-		return "StudentView [studentId=" + studentId + ", studentName=" + studentName + ", email=" + email
-				+ ", headPortraits=" + headPortraits + ", studentAge=" + studentAge + ", realName=" + realName
-				+ ", gender=" + gender + ", preference=" + preference + "]";
-	}
-	
 }

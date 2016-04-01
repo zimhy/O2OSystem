@@ -11,5 +11,12 @@
     <select id="findTeacherByNameOrEmail" parameterType="java.lang.String" resultType="teacherCustom">
        select teacherId,password from t_teacher where teacherName=#{value} or email=#{value}
     </select>
+    
+    <!-- 编辑教师的认证信息 -->
+    <update id="editTeacherDiplomaInfo" parameterType="teacherCustom" >
+         update t_teacher
+         set idPic=#{idPic},diplomaPic=#{diplomaPic},masterDiplomaPic=#{masterDiplomaPic}
+         where teacherId=#{teacherId}
+    </update>
  
 </mapper>

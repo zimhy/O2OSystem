@@ -23,6 +23,7 @@ import cn.itcast.ssm.service.StudentService;
 import cn.itcast.ssm.view.DiscountCustomView;
 import cn.itcast.ssm.view.OrdersCarListView;
 import cn.itcast.ssm.view.StudentCourseEnrollView;
+import cn.itcast.ssm.view.StudentCourseView;
 import cn.itcast.ssm.view.StudentView;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
@@ -100,7 +101,7 @@ public class StudentController {
 	}
 	
 //	查询优惠券详细信息
-	@RequestMapping(value="queryDiscountDetail.action",method=RequestMethod.GET)
+	@RequestMapping(value="/queryDiscountDetail.action",method=RequestMethod.GET)
 	public @ResponseBody DiscountDetaileCustom queryDiscountDetail(Integer discountId)throws Exception{
 		DiscountDetaileCustom discountDetaileCustom=studentService.findDiscountDetailByDId(discountId);
 		System.out.println(discountDetaileCustom.toString());
@@ -216,6 +217,11 @@ public class StudentController {
 	@RequestMapping(value="/getDiscount.action",method=RequestMethod.GET)
 	public @ResponseBody List<MyDiscountInfo> getDiscount(Integer studentId){
 		return studentService.getDiscount(studentId);
+	}
+	
+	@RequestMapping(value="/queryStuCourseList.action",method=RequestMethod.GET)
+	public @ResponseBody List<StudentCourseView> queryStuCourseList(Integer studentId){
+		return studentService.findStuCouViewBySId(studentId);
 	}
 }
 

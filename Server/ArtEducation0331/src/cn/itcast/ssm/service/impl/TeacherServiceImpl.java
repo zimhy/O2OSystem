@@ -42,6 +42,20 @@ public class TeacherServiceImpl implements TeacherService{
 		}
 		
 	}
+
+//	编辑教师认证信息
+	@Override
+	public String editTeacherDiplomaInfo(TeacherCustom teacherCustom) {
+		// TODO Auto-generated method stub
+		try {
+			teacherMapper.editTeacherDiplomaInfo(teacherCustom);
+			return "0";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "9001";
+		}
+	}
 	
 	
 

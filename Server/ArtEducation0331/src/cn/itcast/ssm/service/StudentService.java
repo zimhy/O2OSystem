@@ -12,6 +12,7 @@ import cn.itcast.ssm.po.StudentCustom;
 import cn.itcast.ssm.view.DiscountCustomView;
 import cn.itcast.ssm.view.OrdersCarListView;
 import cn.itcast.ssm.view.StudentCourseEnrollView;
+import cn.itcast.ssm.view.StudentCourseView;
 import cn.itcast.ssm.view.StudentView;
 
 
@@ -65,4 +66,7 @@ public interface StudentService {
  	
 // 	获取优惠券信息
  	public List<MyDiscountInfo> getDiscount(Integer studentId);
-}
+ 	
+//  根据学生id查询学生课程
+ 	public List<StudentCourseView> findStuCouViewBySId(Integer studentId);
+} 

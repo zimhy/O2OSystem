@@ -10,6 +10,7 @@ import cn.itcast.ssm.po.OrdersCarCustom;
 import cn.itcast.ssm.po.OrdersCarInfo;
 import cn.itcast.ssm.po.OrdersCarList;
 import cn.itcast.ssm.po.Student;
+import cn.itcast.ssm.po.StudentCourseCustom;
 import cn.itcast.ssm.po.StudentCustom;
 
 public interface StudentMapper {
@@ -52,7 +53,9 @@ public interface StudentMapper {
  	
 // 	获取优惠券信息
  	public List<MyDiscountInfo> getDiscount(Integer studentId);
-	
+ 	
+//  根据学生id获取学生所有课程 	
+	public List<StudentCourseCustom> findStuCourseByStudentId(Integer studentId);
 }
 
 

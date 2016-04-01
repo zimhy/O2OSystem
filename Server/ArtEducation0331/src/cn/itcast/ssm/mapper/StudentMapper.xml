@@ -111,6 +111,13 @@
  	   where t_discount.studentId=#{studentId} and t_discount.courseId=t_course.courseId and 
  	      t_course.teacherId=t_teacher.teacherId and t_teacher.organizationId=t_organization.organizationId
  	</select>
+ 	
+ 	<select id="findStuCourseByStudentId" parameterType="java.lang.Integer" resultType="studentCourseCustom">
+ 		select c.*,t.teacherName,o.organizationName,ct.studentId 
+ 		from t_coursestudent ct ,t_course c ,t_organization o ,t_teacher t 
+ 		where ct.studentId = #{studentId} and 
+			ct.courseId = c.courseId and c.teacherId = t.teacherId and o.organizationId = t.organizationId
+ 	</select>
 </mapper>
 
 

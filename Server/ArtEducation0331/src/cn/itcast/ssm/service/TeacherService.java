@@ -10,4 +10,8 @@ public interface TeacherService {
 // 教师登录
 	public String login(String account,String password);
 	
+//	编辑教师的认证信息
+	public String editTeacherDiplomaInfo(TeacherCustom teacherCustom);
+
+	
 }
