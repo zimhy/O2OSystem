@@ -85,7 +85,7 @@ public class StudentServiceImpl implements StudentService{
 	private StudentView transToStudentView(StudentCustom sc){
 		StudentView sv = new StudentView();
 		sv.setStudentId(sc.getStudentId());
-		sv.setNickName(sc.getNickName());
+		sv.setStudentName(sc.getStudentName());
 		sv.setEmail(sc.getEmail());
 		sv.setHeadPortraits(sc.getHeadPortraits());
 		sv.setStudentAge(sc.getStudentAge());
