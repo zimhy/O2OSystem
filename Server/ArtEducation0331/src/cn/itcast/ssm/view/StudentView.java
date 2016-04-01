@@ -2,7 +2,7 @@ package cn.itcast.ssm.view;
 
 public class StudentView {
 	private Integer studentId;
-	private String nickName;
+	private String studentName;
 	private String email;
 	private String headPortraits;
 	private Integer studentAge;
@@ -15,11 +15,12 @@ public class StudentView {
 	public void setStudentId(Integer studentId) {
 		this.studentId = studentId;
 	}
-	public String getNickName() {
-		return nickName;
+	
+	public String getStudentName() {
+		return studentName;
 	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 	public String getEmail() {
 		return email;
@@ -59,7 +60,7 @@ public class StudentView {
 	}
 	@Override
 	public String toString() {
-		return "StudentView [studentId=" + studentId + ", nickName=" + nickName + ", email=" + email
+		return "StudentView [studentId=" + studentId + ", studentName=" + studentName + ", email=" + email
 				+ ", headPortraits=" + headPortraits + ", studentAge=" + studentAge + ", realName=" + realName
 				+ ", gender=" + gender + ", preference=" + preference + "]";
 	}
