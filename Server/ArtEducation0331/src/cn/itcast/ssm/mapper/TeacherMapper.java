@@ -1,5 +1,6 @@
 package cn.itcast.ssm.mapper;
 
+import cn.itcast.ssm.po.Teacher;
 import cn.itcast.ssm.po.TeacherCustom;
 
 public interface TeacherMapper {
@@ -9,5 +10,6 @@ public interface TeacherMapper {
 	
 //	根据教师用户名或邮箱查询教师的信息，教师的邮箱也是唯一的
 	public TeacherCustom findTeacherByNameOrEmail(String userName);
+	public Integer insertTeacher(Teacher teacher);
 	
 }

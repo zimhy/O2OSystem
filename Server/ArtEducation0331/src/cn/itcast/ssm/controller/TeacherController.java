@@ -49,17 +49,37 @@ public class TeacherController {
 	
 	//教师注册
 	@RequestMapping(value="/registerTeacher.action",method=RequestMethod.POST)
-	public ModelAndView registerBaseInfo(Teacher teacher ,MultipartFile headPortraits , //接受商品的图片
-            MultipartFile idPic,MultipartFile diplomaPic,MultipartFile masterDiplomaPic){
-		
+	public ModelAndView registerBaseInfo(Teacher teacher ,MultipartFile headPortraitsPic , //接受商品的图片
+            MultipartFile idPicFile,MultipartFile diplomaPicFile,MultipartFile masterDiplomaPicFile ,HttpServletRequest request){
+		System.out.println("/registerTeacher.action");
 		ModelAndView modelAndView=new ModelAndView();
-		if (headPortraits !=null) {
-			String headPortraitsStr = savePic(headPortraits) ;
+		String rootPath = request.getSession().getServletContext().getRealPath("") ;
+		if (headPortraitsPic !=null) {
+			String headPortraitsStr = savePic(headPortraitsPic,rootPath) ;
+			teacher.setHeadPortraits(headPortraitsStr);
 		}
+		if (diplomaPicFile !=null) {
+			String diplomaPic = savePic(diplomaPicFile,rootPath) ;
+			teacher.setDiplomaPic(diplomaPic);
+		}
+		if (idPicFile !=null) {
+			String idPic = savePic(idPicFile,rootPath) ;
+			teacher.setIdPic(idPic);
+		}
+		if (masterDiplomaPicFile !=null) {
+			String masterDiplomaPic = savePic(masterDiplomaPicFile,rootPath) ;
+			teacher.setMasterDeplomaPic(masterDiplomaPic);
+		}
+		if(teacherService.register(teacher)!= null)
+		{
+			modelAndView.setViewName("signup/signup-veri");
+		}
+		
+		
 		return modelAndView ;
-	}
+	}  
 	
-	private String savePic(MultipartFile file )
+	private String savePic(MultipartFile file ,String rootPath )
 	{
 		try {
 			
@@ -67,13 +87,14 @@ public class TeacherController {
 
 			if(file!=null&&originalFilename!=null&&originalFilename.length()>0){
 //				存储图片的物理路径
-				String pic_path="imageUpload/";
 //				新的图片名称
+				String pic_path= rootPath+File.separator+"imagesUpolad"+File.separator;
 				String newFileName=UUID.randomUUID()+originalFilename.substring(originalFilename.lastIndexOf('.'));
 //				新图片
 				File newFile=new File(pic_path+newFileName);
 //				将内存中的数据写入磁盘
 				file.transferTo(newFile);
+				System.out.println(newFile.getAbsolutePath());
 				return newFileName ;
 //				将新的图片名称写进itemsCustom中
 			}

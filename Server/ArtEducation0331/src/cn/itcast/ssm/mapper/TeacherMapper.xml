@@ -12,4 +12,15 @@
        select teacherId,password from t_teacher where teacherName=#{value} or email=#{value}
     </select>
  
+
+ 
+ 
+ 	<!-- 注册教师信息，并返回studentId -->
+ 	<insert id="insertTeacher" parameterType="Teacher" >
+ 	 <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
+        SELECT LAST_INSERT_ID() 
+     </selectKey>
+ 	    insert into t_teacher
+ 	    values(null,#{teacherCode},#{teacherName},#{password},#{email},#{headPortraits},#{realName},#{gender},#{teacherAge},#{preference},#{phone},#{seniority},#{organizationId},#{education},#{description},2001,#{teacherType},#{idPic},#{diplomaPic},#{masterDiplomaPic})
+ 	</insert>
 </mapper>

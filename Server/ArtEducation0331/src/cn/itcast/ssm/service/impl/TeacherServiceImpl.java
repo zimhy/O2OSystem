@@ -42,6 +42,12 @@ public class TeacherServiceImpl implements TeacherService{
 		}
 		
 	}
+
+	@Override
+	public Integer register(Teacher teacher) {
+		return teacherMapper.insertTeacher(teacher);
+		
+	}
 	
 	
 

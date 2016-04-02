@@ -34,8 +34,35 @@ public class Teacher {
     private Integer status;
 
     private Integer teacherType;
+    private String idPic;
+    private String diplomaPic;
+    private String masterDiplomaPic;
 
-    public Integer getTeacherId() {
+    public String getIdPic() {
+		return idPic;
+	}
+
+	public void setIdPic(String idPic) {
+		this.idPic = idPic;
+	}
+
+	public String getDiplomaPic() {
+		return diplomaPic;
+	}
+
+	public void setDiplomaPic(String diplomaPic) {
+		this.diplomaPic = diplomaPic;
+	}
+
+	public String getMasterDeplomaPic() {
+		return masterDiplomaPic;
+	}
+
+	public void setMasterDeplomaPic(String masterDiplomaPic) {
+		this.masterDiplomaPic = masterDiplomaPic;
+	}
+
+	public Integer getTeacherId() {
         return teacherId;
     }
 
