@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import cn.itcast.ssm.po.Teacher;
 import cn.itcast.ssm.service.TeacherService;
 
 @Controller
@@ -41,4 +42,27 @@ public class TeacherController {
 		}
 	}
 	
+	//教师注册
+	@RequestMapping(value="/registerTeacher.action",method=RequestMethod.POST)
+	public ModelAndView registerBaseInfo(Teacher teacher ,HttpServletRequest request){
+		//TODO
+		ModelAndView modelAndView=new ModelAndView();
+		String stepStr = request.getParameter("step") ;
+		if(!stepStr.isEmpty()&&stepStr.matches("\\d+")) 
+		{
+			int step = Integer.parseInt(stepStr);
+			switch (step) {
+			case value:
+				
+				break;
+
+			default:
+				break;
+			}
+		}else {
+			
+		}
+		
+		return modelAndView ;
+	}
 }
