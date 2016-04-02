@@ -11,22 +11,128 @@
   <body ng-app="formSignup">
     <header class="container-fluid">
       <div class="row page-title">
-        入 驻 流 程
+        教师入驻信息登记
       </div>
     </header>
-    <div class="container" style="height: 800px;">
-      <div ui-view></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form id="signup-form" action="/ArtEducation/teacher/registerTeacher.action" enctype="multipart/form-data" name="signup" method="post">
+            <div class="page-header text-center">
+              <div class="status-buttons"><span>1</span>基本信息</div>
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="teacherName">用户名</label>
+              <input type="text" id="teacherName" class="form-control" name="teacherName" required>
+            </div>
+            <div class="form-group">
+              <label for="pwd">密码</label>
+              <input type="password" id="pwd" class="form-control" name="pwd" required>
+            </div>
+            <!--<div class="form-group">-->
+              <!--<label for="pwdchk">密码确认</label>-->
+              <!--<input type="password" id="pwdchk" class="form-control" required>-->
+            <!--</div>-->
+            <div class="form-group">
+              <label for="headPortraits">头像(参数没有)</label>
+              <input type="file" id="headPortraits" name="headPortraits" required>
+            </div>
+            <div class="form-group">
+              <label for="name">真实姓名</label>
+              <input type="text" id="name" class="form-control" name="realName" required>
+            </div>
+            <div class="form-group">
+              <span>性别</span>
+              <span style="padding-left: 15px;">
+                <input type="radio" name="gender" value="male"><label>女</label>
+                <input type="radio" name="gender" value="female"><label>男</label>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="teacherAge">年龄</label>
+              <input type="text" id="teacherAge" class="form-control" name="teacherAge" required>
+            </div>
+            <div class="form-group">
+              <label for="IDNumber">身份证号</label>
+              <input type="text" id="IDNumber" class="form-control" name="IDNumber" required>
+            </div>
+            <div class="form-group">
+              <label for="preference">教学内容</label>
+              <input type="text" id="preference" class="form-control" name="preference" required>
+            </div>
+            <div class="form-group">
+              <label for="education">最高学历</label>
+              <select name="education" id="education" style="width:100px;margin-left:15px;">
+                <option value="本科/专科" selected>本科/专科</option>
+                <option value="硕士">硕士</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="seniority">教龄</label>
+              <select name="seniority" id="seniority" style="width:100px;margin-left:43px;">
+                <option value="1" selected>1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                <option value="4">4年</option>
+                <option value="5">5年</option>
+                <option value="6">6年</option>
+                <option value="7">7年</option>
+                <option value="8">7年以上</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="phone">联系方式(手机/固话)</label>
+              <input type="text" id="phone" class="form-control" name="phone" required>
+            </div>
+            <div class="form-group">
+              <span>工作类型</span>
+              <span style="padding-left: 15px">
+                <input type="radio" name="teacherType" value="3001" required><label>兼职</label>
+                <input type="radio" name="teacherType" value="3002"><label>全职</label>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="description">自我介绍</label>
+              <textarea id="description" class="form-control" name="description"  cols="30" rows="10"></textarea>
+            </div>
+            <div class="page-header text-center">
+              <div class="status-buttons"><span>2</span>身份审核信息</div>
+            </div>
+            <div class="form-group">
+              <label for="idPic">身份证照片(要带身份证号的一面)</label>
+              <input type="file" id="idPic" name="idPic" required>
+            </div>
+            <div class="form-group">
+              <label for="diplomaPic">本科/专科毕业证照片</label>
+              <input type="file" id="diplomaPic" name="diplomaPic">
+            </div>
+            <div class="form-group">
+              <label for="masterDiplomaPic">硕士毕业证照片</label>
+              <input type="file" id="masterDiplomaPic" name="masterDiplomaPic">
+            </div>
+            <div class="form-group">
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">确认注册</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <footer class="container-fluid" style="height: 100px;background-color: #4d99f5;text-align: center;">
       <div class="row" style="color:#fff;">
         &copy底部信息
       </div>
     </footer>
-    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
-    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular-animate.min.js"></script>
-    <script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-alpha0/angular-ui-router.min.js"></script>
-    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular-resource.min.js"></script>
-    <script src="../js/constSer.js"></script>
+    <!--<script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>-->
+    <!--<script src="http://cdn.bootcss.com/angular.js/1.5.0/angular-animate.min.js"></script>-->
+    <!--<script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-alpha0/angular-ui-router.min.js"></script>-->
+    <!--<script src="http://cdn.bootcss.com/angular.js/1.5.0/angular-resource.min.js"></script>-->
+    <!--<script src="../js/constSer.js"></script>-->
     <script src="../js/signupApp.js"></script>
   </body>
 </html>
