@@ -4,6 +4,9 @@ import cn.itcast.ssm.po.TeacherCustom;
 
 public interface TeacherMapper {
 
+//	根据教师的id来查询教师的信息
+	public TeacherCustom findTeacherById(Integer teacherId);
+	
 //	根据教师的用户名查询教师信息
 	public TeacherCustom findTeacherByName(String studentName);
 	

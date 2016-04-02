@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import cn.itcast.ssm.po.TeacherCustom;
 import cn.itcast.ssm.service.TeacherService;
+import cn.itcast.ssm.view.TeacherDiplomaInfoView;
 
 @Controller
 @RequestMapping(value="/teacher")
@@ -50,59 +51,97 @@ public class TeacherController {
 	}
 	
 //	编辑教师认证信息
-	@RequestMapping(value="/editTeacherDipPic.action")
-	public String  editTeacherDipPic(HttpServletRequest request,
-            Integer id,
+	@RequestMapping(value="/editTeacherDipPic.action",method=RequestMethod.POST)
+	public ModelAndView  editTeacherDipPic(HttpServletRequest request,
             Model model,
-            MultipartFile idPic, //接受身份证的图片
-            MultipartFile diplomaPic,
-            MultipartFile masterDiplomaPic
+            MultipartFile teacherIdPic, //接受身份证的图片
+            MultipartFile teacherDiplomaPic,
+            MultipartFile teacherMasterDiplomaPic
             ) throws IllegalStateException, IOException{
+		
 		TeacherCustom tc=new TeacherCustom();
+		tc.setTeacherId(1);
+		
 //		存储图片的物理路径
 		String pic_path="/Users/linbo/Documents/test/";
 
 //		图片的原始名称
-		String idPicFilename=idPic.getOriginalFilename();
-		if(idPic!=null&&idPicFilename!=null&&idPicFilename.length()>0){
+		String idPicFilename=teacherIdPic.getOriginalFilename();
+		if(teacherIdPic!=null&&idPicFilename!=null&&idPicFilename.length()>0){
 //			新的图片名称
 			String newFileName=UUID.randomUUID()+idPicFilename.substring(idPicFilename.lastIndexOf('.'));
 //			新图片
 			File newFile=new File(pic_path+newFileName);
 //			将内存中的数据写入磁盘
-			idPic.transferTo(newFile);
+			teacherIdPic.transferTo(newFile);
 //			将新的图片名称写进itemsCustom中
 			tc.setIdPic(newFileName);
 		}
 		
 //		图片的原始名称
-		String diplomaPicFilename=diplomaPic.getOriginalFilename();
-		if(diplomaPic!=null&&diplomaPicFilename!=null&&diplomaPicFilename.length()>0){
+		String diplomaPicFilename=teacherDiplomaPic.getOriginalFilename();
+		if(teacherDiplomaPic!=null&&diplomaPicFilename!=null&&diplomaPicFilename.length()>0){
 //			新的图片名称
 			String newFileName=UUID.randomUUID()+diplomaPicFilename.substring(diplomaPicFilename.lastIndexOf('.'));
 //			新图片
 			File newFile=new File(pic_path+newFileName);
 //			将内存中的数据写入磁盘
-			diplomaPic.transferTo(newFile);
+			teacherDiplomaPic.transferTo(newFile);
 //			将新的图片名称写进itemsCustom中
 			tc.setDiplomaPic(newFileName);
 		}
 		
 //		图片的原始名称
-		String masterDiplomaPicFilename=masterDiplomaPic.getOriginalFilename();
-		if(masterDiplomaPic!=null&&masterDiplomaPicFilename!=null&&masterDiplomaPicFilename.length()>0){
+		String masterDiplomaPicFilename=teacherMasterDiplomaPic.getOriginalFilename();
+		if(teacherMasterDiplomaPic!=null&&masterDiplomaPicFilename!=null&&masterDiplomaPicFilename.length()>0){
 //			新的图片名称
 			String newFileName=UUID.randomUUID()+masterDiplomaPicFilename.substring(masterDiplomaPicFilename.lastIndexOf('.'));
 //			新图片
 			File newFile=new File(pic_path+newFileName);
 //			将内存中的数据写入磁盘
-			masterDiplomaPic.transferTo(newFile);
+			teacherMasterDiplomaPic.transferTo(newFile);
 //			将新的图片名称写进itemsCustom中
 			tc.setMasterDiplomaPic(newFileName);
 		}
 		
 		String resultCode=teacherService.editTeacherDiplomaInfo(tc);
-		return resultCode;
+		System.out.println("*************");
+		System.out.println(resultCode);
+		System.out.println("*************");
+//		ModelAndView modelAndView=new ModelAndView();
+//		modelAndView.setViewName("submitDiplomaInfo");
+	
+		TeacherDiplomaInfoView tdiv=teacherService.findDiplomaInfo(tc.getTeacherId());
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.addObject("tdiv", tdiv);
+		modelAndView.addObject("resultCode", resultCode);
+		modelAndView.setViewName("submitDiplomaInfo");
+		return modelAndView;
+//		model.addAttribute("resultCode", resultCode);
+//		return "submitDiplomaInfo";
+	}
+	
+	
+//	查询教师的认证图片信息
+	@RequestMapping(value="/findDiplomaInfo.action")
+	public ModelAndView findDiplomaInfo(Integer teacherId){
+		TeacherDiplomaInfoView tdiv=teacherService.findDiplomaInfo(teacherId);
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.addObject("tdiv", tdiv);
+//		return "redirect:/jsp/submitDiplomaInfo.jsp";
+		modelAndView.setViewName("submitDiplomaInfo");
+		return modelAndView;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+

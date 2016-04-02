@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,6 +12,7 @@ import cn.itcast.ssm.mapper.StudentMapper;
 import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.DiscountCustom;
 import cn.itcast.ssm.po.DiscountDetaileCustom;
+import cn.itcast.ssm.po.DiscountNum;
 import cn.itcast.ssm.po.MyDiscountInfo;
 import cn.itcast.ssm.po.OrdersCarCustom;
 import cn.itcast.ssm.po.OrdersCarInfo;
@@ -336,6 +338,25 @@ public class StudentServiceImpl implements StudentService{
 		scv.setTeachAddress(scc.getTeachAddress());
 		scv.setOrganizationName(scc.getOrganizationName());
 		return scv;
+	}
+
+//	生成优惠码
+	@Override
+	public void insertDiscountNum(Integer studentId,Integer courseId,Integer ordersCarId) {
+		// TODO Auto-generated method stub
+		DiscountNum discountNum=new DiscountNum();
+		discountNum.setStudentId(studentId);
+		discountNum.setCourseId(courseId);
+		Random rand=new Random();
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<6;i++){
+			sb.append(rand.nextInt(10));
+		}
+		String discountCode=sb.toString();
+		discountNum.setDiscountCode(discountCode);
+//		生成优惠码的同时将购物车列表中的课程删除
+		studentMapper.insertDiscountNum(discountNum);
+		studentMapper.deleteOrdersCar(ordersCarId);
 	}
 }
 

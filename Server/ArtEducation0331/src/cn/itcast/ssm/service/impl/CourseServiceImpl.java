@@ -54,27 +54,6 @@ public class CourseServiceImpl implements CourseService{
 		return ctvs;
 	}
 	
-	
-//	查询课程详情
-	@Override
-	public CourseDetailView findCourseDetailByCId(Integer courseId) throws Exception {
-		// TODO Auto-generated method stub
-		CourseDetailCustom cdc = courseMapping.findCourseDetailByCId(courseId);
-//		if(cdc != null){
-//			System.out.println(cdc.getCourseName()+" "+cdc.getTeacherCustom().getTeacherName()+" "+cdc.getTeacherCustom().getOrganizationCustom().getOrganizationName());
-//			System.out.println(cdc.getComments().size());
-//			System.out.println(cdc.getComments().get(0).getStudentCustom().getStudentName());
-//			System.out.println(cdc.getComments().get(1).getStudentCustom().getStudentName());
-//		}else{
-//			System.out.println("-----null");
-//		}
-		if(cdc != null){
-			CourseDetailView cdv = TransToCourseDetailView(cdc);
-			return cdv;
-		}
-		return null;
-	}
-	
 	private CourseView transToCourseView(CourseCustom cc){
 		System.out.println(cc.toString());
 		CourseView cv = new CourseView();
@@ -94,6 +73,19 @@ public class CourseServiceImpl implements CourseService{
 		return ctv;
 	}
 
+//	查询课程详情
+	@Override
+	public CourseDetailView findCourseDetailByCId(Integer courseId) throws Exception {
+		// TODO Auto-generated method stub
+		CourseDetailCustom cdc = courseMapping.findCourseDetailByCId(courseId);
+
+		if(cdc != null){
+			CourseDetailView cdv = TransToCourseDetailView(cdc);
+			return cdv;
+		}
+		return null;
+	}
+	
 	private CourseDetailView TransToCourseDetailView(CourseDetailCustom cdc){
 		List<CourseCommentView> ccvs = new LinkedList<CourseCommentView>();
 		CourseDetailView cdv = new CourseDetailView();

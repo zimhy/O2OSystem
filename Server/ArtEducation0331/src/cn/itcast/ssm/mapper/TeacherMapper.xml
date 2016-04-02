@@ -7,6 +7,11 @@
         select teacherId,password from t_teacher where teacherName=#{value}
     </select>
     
+      <!-- 根据教师的id来查询教师的信息 -->
+    <select id="findTeacherById"  parameterType="java.lang.Integer" resultType="teachercustom">
+        select * from t_teacher where teacherId=#{value}
+    </select>
+    
     <!--  根据教师的邮箱，来查询教师的信息-->
     <select id="findTeacherByNameOrEmail" parameterType="java.lang.String" resultType="teacherCustom">
        select teacherId,password from t_teacher where teacherName=#{value} or email=#{value}

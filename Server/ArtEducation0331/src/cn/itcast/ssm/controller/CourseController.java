@@ -20,7 +20,7 @@ public class CourseController {
 
 	@Autowired
 	private CourseService courseService;
-	
+//	查询每个课程大类下的所有课程
 	@RequestMapping(value="/queryCoursesList.action")
 	public @ResponseBody List<CourseView> queryCoursesList(Integer courseTypeId) throws Exception{
 		List<CourseView> cvs = courseService.findCourseListByCId(courseTypeId);
@@ -36,6 +36,7 @@ public class CourseController {
 		return ctvs;
 	}
 	
+//	查询课程详情
 	@RequestMapping(value="/queryCourseDetail.action")
 	public @ResponseBody CourseDetailView queryCourseDetail(Integer courseId) throws Exception{
 		CourseDetailView cdv = courseService.findCourseDetailByCId(courseId);

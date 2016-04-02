@@ -15,7 +15,7 @@ public class Course {
 
     private String courseDesc;
 
-    private Date teachTime;
+    private String teachTime;
 
     private String totalStarLevel;
 
@@ -87,11 +87,11 @@ public class Course {
         this.courseDesc = courseDesc == null ? null : courseDesc.trim();
     }
 
-    public Date getTeachTime() {
+    public String getTeachTime() {
         return teachTime;
     }
 
-    public void setTeachTime(Date teachTime) {
+    public void setTeachTime(String teachTime) {
         this.teachTime = teachTime;
     }
 

@@ -18,7 +18,8 @@
 	
 	<!-- 根据课程ID，查询课程详情 -->
 	<select id="findCourseDetailByCId" parameterType="java.lang.Integer" resultMap="courseDetailMap">
-		select c.*,t.*,o.*,cs.*, s.* from t_course c,t_teacher t,t_organization o,t_coursestudent cs,t_student s where c.courseId=1 and c.teacherId=t.teacherId and t.organizationId=o.organizationId and cs.courseId= c.courseId and cs.studentId=s.studentId
+		select c.*,t.*,o.*,cs.* from t_course c left join t_coursestudent cs on cs.courseId=c.courseId ,t_teacher t,t_organization o  
+		where c.courseId=#{courseId} and c.teacherId=t.teacherId and t.organizationId=o.organizationId
 	</select>
 	
 	<resultMap type="courseDetailCustom" id="courseDetailMap">

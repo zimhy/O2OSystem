@@ -103,6 +103,13 @@
  	   where ordersCarId=#{ordersCarId}
  	</delete>
  	
+ 	<!-- 领取优惠码 -->
+ 	<insert id="insertDiscountNum" parameterType="discountNum">
+ 	   insert 
+ 	   into t_discount(discountCode,studentId,courseId)
+ 	   values(#{discountCode},#{studentId},#{courseId})
+ 	</insert>
+ 	
  	<!--获取优惠券信息  -->
  	<select id="getDiscount" parameterType="java.lang.Integer" resultType="myDiscountInfo">
  	   select t_discount.courseId,discountStatus,discountCode,t_course.courseName,t_teacher.teacherName,

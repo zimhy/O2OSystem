@@ -4,6 +4,7 @@ import java.util.List;
 
 import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.DiscountDetaileCustom;
+import cn.itcast.ssm.po.DiscountNum;
 import cn.itcast.ssm.po.MyDiscountInfo;
 import cn.itcast.ssm.po.OrdersCarCustom;
 import cn.itcast.ssm.po.OrdersCarInfo;
@@ -69,4 +70,8 @@ public interface StudentService {
  	
 //  根据学生id查询学生课程
  	public List<StudentCourseView> findStuCouViewBySId(Integer studentId);
+ 	
+//	插入优惠码
+	public void insertDiscountNum(Integer studentId,Integer courseId,Integer ordersCarId);
+
 } 

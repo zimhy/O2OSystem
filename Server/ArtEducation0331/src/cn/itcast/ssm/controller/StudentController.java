@@ -223,6 +223,41 @@ public class StudentController {
 	public @ResponseBody List<StudentCourseView> queryStuCourseList(Integer studentId){
 		return studentService.findStuCouViewBySId(studentId);
 	}
+	
+//  生成优惠码
+	@RequestMapping(value="/getDiscountNum.action",method=RequestMethod.POST)
+	public void getDiscountNum(HttpServletRequest request,HttpServletResponse response){
+		String data=request.getParameter("data");
+		JSONObject jsonObject=JSONObject.fromObject(data);
+		String resultCode=null;
+//		获取学生id
+		Integer studentId=Integer.parseInt(jsonObject.get("studentId").toString());
+		
+		String s=jsonObject.get("ids").toString();
+		JSONArray jsonArray=JSONArray.fromObject(s);
+		
+		try {
+			for(int i=0;i<jsonArray.size();i++){
+				Integer ordersCarId=Integer.parseInt(jsonArray.getJSONObject(i).get("id").toString());
+				Integer courseId=Integer.parseInt(jsonArray.getJSONObject(i).get("courseId").toString());
+				studentService.insertDiscountNum(studentId, courseId, ordersCarId);
+			}
+			resultCode="{\"resultCode\":0}";
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			resultCode="{\"resultCode\":9001}";
+		}
+		
+		
+		try {
+			PrintWriter ps=response.getWriter();
+			ps.write(resultCode);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
 
 

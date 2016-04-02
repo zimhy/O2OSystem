@@ -5,6 +5,7 @@ import java.util.List;
 import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.DiscountCustom;
 import cn.itcast.ssm.po.DiscountDetaileCustom;
+import cn.itcast.ssm.po.DiscountNum;
 import cn.itcast.ssm.po.MyDiscountInfo;
 import cn.itcast.ssm.po.OrdersCarCustom;
 import cn.itcast.ssm.po.OrdersCarInfo;
@@ -56,6 +57,9 @@ public interface StudentMapper {
  	
 //  根据学生id获取学生所有课程 	
 	public List<StudentCourseCustom> findStuCourseByStudentId(Integer studentId);
+	
+//	领取优惠码
+	public void insertDiscountNum(DiscountNum discountNum);
 }
 
 

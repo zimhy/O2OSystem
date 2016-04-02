@@ -6,6 +6,7 @@ import cn.itcast.ssm.mapper.TeacherMapper;
 import cn.itcast.ssm.po.Teacher;
 import cn.itcast.ssm.po.TeacherCustom;
 import cn.itcast.ssm.service.TeacherService;
+import cn.itcast.ssm.view.TeacherDiplomaInfoView;
 
 public class TeacherServiceImpl implements TeacherService{
 
@@ -56,7 +57,34 @@ public class TeacherServiceImpl implements TeacherService{
 			return "9001";
 		}
 	}
+
+//	根据教师id 查询教师信息
+	@Override
+	public TeacherCustom findTeacherById(Integer teacherId) {
+		// TODO Auto-generated method stub
+		try {
+			TeacherCustom tc=teacherMapper.findTeacherById(teacherId);
+			return tc;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
-	
+//	查询教师的认证图片信息
+	@Override
+	public TeacherDiplomaInfoView findDiplomaInfo(Integer teacherId){
+		TeacherCustom tc=teacherMapper.findTeacherById(teacherId);
+		if(tc==null){
+			return null;
+		}else{
+			TeacherDiplomaInfoView tdiv=new TeacherDiplomaInfoView();
+			tdiv.setIdPic(tc.getIdPic());
+			tdiv.setDiplomaPic(tc.getDiplomaPic());
+			tdiv.setMasterDiplomaPic(tc.getMasterDiplomaPic());
+			return tdiv;
+		}
+	}
 
 }
