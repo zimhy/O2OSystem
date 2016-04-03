@@ -21,7 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cn.itcast.ssm.po.TeacherCustom;
+import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.Teacher;
+import cn.itcast.ssm.service.FileService;
 import cn.itcast.ssm.service.TeacherService;
 import cn.itcast.ssm.view.TeacherCoursesView;
 import cn.itcast.ssm.view.TeacherDiplomaInfoView;
@@ -32,6 +34,9 @@ public class TeacherController {
 	
 	@Autowired
 	private TeacherService teacherService;
+	
+	@Autowired
+	private FileService fileService;
 	
 //	教师登录
 	@RequestMapping(value="/login.action",method=RequestMethod.POST)
@@ -58,6 +63,7 @@ public class TeacherController {
 			TeacherCustom tc=teacherService.findTeacherById(teacherId);
 			List<TeacherCoursesView> teacherCoursesViews=teacherService.findTeacherCourses(teacherId);
 			session.setAttribute("teacherCustom", tc);
+			session.setAttribute("teacherId", teacherId);
 			session.setAttribute("teacherCoursesViews", teacherCoursesViews);
 			return "redirect:/jsp/teacher/tm.jsp";
 		}
@@ -225,7 +231,66 @@ public class TeacherController {
 	}
 	
 	
+	//发布课程
+	@RequestMapping(value="/publishCourse.action",method=RequestMethod.POST)
+	public String publishCourse(CourseCustom cc,String courseStartTime,
+			String courseEndTime,String classTime,Integer teacherId,MultipartFile mainImageFile,
+			Model model) throws IllegalStateException, IOException{
+		System.out.println("------->"+cc.getCourseName());
+		System.out.println("------->"+courseStartTime);
+//		存储图片的物理路径
+		String pic_path="/Users/hardor/Desktop/picture/";
+		String teachTime = courseStartTime + "-" + courseEndTime + "-" + classTime;
+		cc.setTeachTime(teachTime);
+		cc.setTeacherId(teacherId);
+//		图片的原始名称
+		String mainImageName = mainImageFile.getOriginalFilename();
+		if(mainImageFile != null && mainImageName != null){
+//			新的图片名称
+			String newMainImageName = UUID.randomUUID() + mainImageName.substring(mainImageName.lastIndexOf('.'));
+//			新图片
+			File newFile = new File(pic_path + newMainImageName);
+//			将内存中的数据写入磁盘
+			mainImageFile.transferTo(newFile);
+			
+			fileService.insertFile(newMainImageName, newFile);
+			
+			cc.setMainImage(newMainImageName);
+		}
+		
+		Integer courseId = teacherService.insertCourse(cc);
+		
+		model.addAttribute("courseId", courseId);
+		
+		return "";
+	}
 	
+	//查询历史课程
+	@RequestMapping(value="/queryHistoryCourse.action",method=RequestMethod.GET)
+	public String queryHistoryCourse(Integer teacherId,Integer courseStatus,Model model) throws Exception{
+		List<CourseCustom> ccList = teacherService.findHisCourseByTIdAndStatus(teacherId, courseStatus);
+		model.addAttribute("courseList", ccList);
+		return "";
+	}
+	
+	//查询课程
+	@RequestMapping(value="/queryCourse.action",method=RequestMethod.GET)
+	public String queryCourse(Integer teacherId,Model model){
+		List<CourseCustom> ccList = teacherService.findCourseByTeacherId(teacherId);
+		model.addAttribute("courseList", ccList);
+		return "";
+	}
+	
+	//删除课程
+	@RequestMapping(value="/deleteCourse.action",method=RequestMethod.GET)
+	public String deleteCourse(Integer courseId,HttpSession session){
+		teacherService.deleteCourseBycourseId(courseId);
+		Integer teacherId = (Integer)session.getAttribute("teacherId");
+		if(teacherId == null){
+			teacherId = 1;
+		}
+		return "forward:queryCourse.action?teacherId="+teacherId;
+	}
 	
 	
 }
