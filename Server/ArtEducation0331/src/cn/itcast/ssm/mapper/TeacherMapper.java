@@ -26,7 +26,7 @@ public interface TeacherMapper {
 //	编辑教师信息
 	public void editTeacherInfo(TeacherCustom teacherCustom);
 
-	public String insertTeacher(Teacher teacher);
+	public Integer insertTeacher(Teacher teacher);
 
 
 	

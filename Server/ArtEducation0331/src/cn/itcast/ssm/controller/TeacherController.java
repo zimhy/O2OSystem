@@ -217,6 +217,7 @@ public class TeacherController {
 			
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "";
 		}
 		
