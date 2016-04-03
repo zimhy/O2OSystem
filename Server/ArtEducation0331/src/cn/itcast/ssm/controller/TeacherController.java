@@ -49,7 +49,7 @@ public class TeacherController {
 	
 	//教师注册
 	@RequestMapping(value="/registerTeacher.action",method=RequestMethod.POST)
-	public ModelAndView registerBaseInfo(Teacher teacher ,MultipartFile headPortraitsPic , //接受商品的图片
+	public ModelAndView registerBaseInfo(Teacher teacher ,MultipartFile headPortraitsPic , //接受的图片
             MultipartFile idPicFile,MultipartFile diplomaPicFile,MultipartFile masterDiplomaPicFile ,HttpServletRequest request){
 		System.out.println("/registerTeacher.action");
 		ModelAndView modelAndView=new ModelAndView();
@@ -70,9 +70,11 @@ public class TeacherController {
 			String masterDiplomaPic = savePic(masterDiplomaPicFile,rootPath) ;
 			teacher.setMasterDeplomaPic(masterDiplomaPic);
 		}
-		if(teacherService.register(teacher)!= null)
+		if(teacherService.register(teacher).matches("\\d+"))
 		{
-			modelAndView.setViewName("signup/signup-veri");
+			modelAndView.setViewName("signup/regsuccess");
+		}else{
+			modelAndView.setViewName("index");
 		}
 		
 		
