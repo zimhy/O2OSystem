@@ -35,7 +35,7 @@ public class Course {
 
     private Integer realStuNum;
 
-    private Integer courseStatus;
+    private String courseStatus;
 
     private String discountUseInfo;
 
@@ -167,11 +167,11 @@ public class Course {
         this.realStuNum = realStuNum;
     }
 
-    public Integer getCourseStatus() {
+    public String getCourseStatus() {
         return courseStatus;
     }
 
-    public void setCourseStatus(Integer courseStatus) {
+    public void setCourseStatus(String courseStatus) {
         this.courseStatus = courseStatus;
     }
 

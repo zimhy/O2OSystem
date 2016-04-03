@@ -8,7 +8,7 @@ public class CourseDetailView {
 	private String teacherName;
 	private String mainImage;
 	private String courseDesc;
-	private Integer courseStatus;
+	private String courseStatus;
 	private String education;
 	private Integer seniority;
 	private String description;
@@ -47,10 +47,10 @@ public class CourseDetailView {
 	public void setCourseDesc(String courseDesc) {
 		this.courseDesc = courseDesc;
 	}
-	public Integer getCourseStatus() {
+	public String getCourseStatus() {
 		return courseStatus;
 	}
-	public void setCourseStatus(Integer courseStatus) {
+	public void setCourseStatus(String courseStatus) {
 		this.courseStatus = courseStatus;
 	}
 	public String getEducation() {

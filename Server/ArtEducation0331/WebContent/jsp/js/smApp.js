@@ -1,4 +1,4 @@
-angular.module('smApp',['ngAnimate','ui.router','ui.date','constSer'])
+angular.module('smApp',['ngAnimate','ui.router','ui.date'])
   .config(function ($stateProvider,$urlRouterProvider) {
     $stateProvider
       .state('sm',{
@@ -32,7 +32,7 @@ angular.module('smApp',['ngAnimate','ui.router','ui.date','constSer'])
       });
     $urlRouterProvider.otherwise('/sm/teacherManager');
   })
-  .controller('smController',function ($scope,fieldConst,degreeConst,teAgeConst) {
+  .controller('smController',function ($scope) {
     $scope.profileInfo = {};
 
 

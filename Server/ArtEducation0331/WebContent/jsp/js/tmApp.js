@@ -1,4 +1,4 @@
-angular.module('tmApp',['ngAnimate','ui.router','ui.date','constSer'])
+angular.module('tmApp',['ngAnimate','ui.router','ui.date'])
 .config(function ($stateProvider,$urlRouterProvider) {
   $stateProvider
     .state('tm',{
@@ -28,17 +28,13 @@ angular.module('tmApp',['ngAnimate','ui.router','ui.date','constSer'])
     });
   $urlRouterProvider.otherwise('/tm/profile');
 })
-.controller('tmController',function ($scope,fieldConst,degreeConst,teAgeConst) {
+.controller('tmController',function ($scope) {
   $scope.profileInfo = {};
 
 
 
-  $scope.fieldOpts = fieldConst.query();
-  $scope.degreeOpts = degreeConst.query();
-  $scope.teAgeOpts = teAgeConst.query();
-
   $scope.profileSubmit = function () {
-    
+
   };
   $scope.idSubmit = function () {
 

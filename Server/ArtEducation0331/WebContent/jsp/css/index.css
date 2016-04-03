@@ -5,15 +5,15 @@
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
 }
 .qrcode {
-  /*width: 200px;*/
-  /*height: 100px;*/
+  padding: 10px 10px 0 10px;
   background-color: #fff;
   position: absolute;
   right: 20%;
   bottom: 30%;
+  border-radius: 4px;
 }
 .qrcode div {
   display: inline-block;
@@ -29,11 +29,14 @@
   display: block;
   margin-bottom:10px;
   text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
 }
 .qrcode:before{
   content: '扫描二维码下载App';
   position: absolute;
-  bottom: 140px;
+  bottom: 150px;
   font-size: 20px;
   font-weight: bold;
   color: white;

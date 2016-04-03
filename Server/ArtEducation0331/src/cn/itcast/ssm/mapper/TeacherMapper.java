@@ -1,5 +1,8 @@
 package cn.itcast.ssm.mapper;
 
+import java.util.List;
+
+import cn.itcast.ssm.po.TeacherCourses;
 import cn.itcast.ssm.po.TeacherCustom;
 
 public interface TeacherMapper {
@@ -15,5 +18,11 @@ public interface TeacherMapper {
 	
 //	编辑教师认证信息
 	public void editTeacherDiplomaInfo(TeacherCustom teacherCustom);
+	
+//	查询教师的课程
+	public List<TeacherCourses> findTeacherCourses(Integer teacherId);
+	
+//	编辑教师信息
+	public void editTeacherInfo(TeacherCustom teacherCustom);
 	
 }
