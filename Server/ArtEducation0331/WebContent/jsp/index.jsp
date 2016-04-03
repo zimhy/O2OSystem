@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html >
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -13,7 +14,7 @@
   <body>
     <header class="container-fluid">
       <div class="row">
-        <div class="col-md-6"><a href="index.html"><img class="logo" src="" alt="website logo"></a>
+        <div class="col-md-6"><a href="index.jsp"><img class="logo" src="" alt="website logo"></a>
           <p class="slogan">艺宝,您身边的艺术教师!</p>
         </div>
         <div class="col-md-6">
@@ -21,17 +22,24 @@
             <a href="signup/signup.html">教师入驻</a>
             <a href="#" class="ssin">教师登录</a>
             <a href="#" class="ssin">机构登录</a>
+           
+            <% if(session.getAttribute("resultCode")=="9001"){ %>
+                  <p>用户名或邮箱不存在</p>
+            <%session.removeAttribute("resultCode");}else if(session.getAttribute("resultCode")=="9002"){ %>
+                  <p>密码错误</p>
+            <%session.removeAttribute("resultCode");}else if(session.getAttribute("resultCode")=="9009"){ %>
+                 <p>其他原因导致登录失败</p>
+            <%session.removeAttribute("resultCode");} %>
+            
           </div>
           <div class="signin">
-            <form action="" method="post">
+            <form action="/ArtEducation/teacher/login.action" method="post">
               <table class="formtable">
-                <tr><td>邮箱：</td><td><input type="text" name="username" required></td></tr>
+                <tr><td>账户：</td><td><input type="text" name="username" required></td></tr>
                 <tr><td>密码：</td><td><input type="password" name="password" required></td></tr>
-                <tr><td>验证码：</td><td><input type="text" name="" required></td></tr>
-                <tr><td></td><td><a href=""><img src="" alt="验证码图片"></a></td></tr>
               </table>
               <div class="submit">
-                <input class="btn btn-default" type="submit" value="登录">
+                <button class="btn btn-primary" type="submit">登录</button>
                 <button type="button" class="btn btn-default" id="dismiss">关闭</button>
               </div>
             </form>

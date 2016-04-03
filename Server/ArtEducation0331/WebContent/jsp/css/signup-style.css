@@ -3,6 +3,7 @@
 ============================================================================= */
 .page-title {
   height: 150px;
+  letter-spacing: 5px;
   text-align: center;
   line-height: 150px;
   font-size: 48px;
@@ -11,31 +12,17 @@
   text-shadow: -3px -3px 5px #264E7F;
 }
 /* numbered buttons */
-#status-buttons a{ 
-  width: 96px;
+.status-buttons {
+  width: 196px;
   height: 96px;
-  color:#333; 
-  display:inline-block; 
-  font-size:24px; 
-  margin-right:20px; 
+  color:#080808;
+  font-size:24px;
+  font-weight: bold;
+  margin:0 auto;
   text-align:center;
 }
-#status-buttons a:first-child {
-  margin-right: 40px;
-}
-#status-buttons a:nth-child(3) {
-  margin-right: 15px;
-}
-#status-buttons a:hover {
-  text-decoration: none;
-}
-#status-buttons a:active,
-#status-buttons a:focus {
-  text-decoration:none; 
-  color:#00BC8C;
-}
 
-#status-buttons span{
+.status-buttons span{
   color: #fff;
   background:#080808;
   text-align: center; 
@@ -46,13 +33,9 @@
   width:50px;
   border-radius:100%;
 }
-#status-buttons a.active {
-  color: #00BC8C;
+.error {
+  color: red;
 }
-#status-buttons a.active span{ 
-  background:#00BC8C; 
-}
-
 /* ANIMATION STYLINGS
 ============================================================================= */
 #signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }

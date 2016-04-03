@@ -30,7 +30,8 @@
 }
 .sidebar a:hover,
 .sidebar a:focus,
-.sidebar a:active
+.sidebar a:active,
+.sidebar .active
 {
   text-decoration: none;
   background-color: #00b976;
