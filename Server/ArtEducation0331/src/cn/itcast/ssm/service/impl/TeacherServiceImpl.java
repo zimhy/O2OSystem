@@ -1,11 +1,13 @@
 package cn.itcast.ssm.service.impl;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import cn.itcast.ssm.mapper.TeacherMapper;
+import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.Teacher;
 import cn.itcast.ssm.po.TeacherCourses;
 import cn.itcast.ssm.po.TeacherCustom;
@@ -173,6 +175,62 @@ public class TeacherServiceImpl implements TeacherService{
 		
 	
 	}
+	
+	@Override
+	public Integer insertCourse(CourseCustom cc) {
+		// TODO Auto-generated method stub
+		Integer courseId = 0;
+		cc.setCourseCode("");
+		cc.setCourseStatus(1001);
+		cc.setRealStuNum(0);
+		cc.setTotalStarLevel("0");
+		cc.setCourseTypeId(1);
+		try {
+			courseId = teacherMapper.insertCourse(cc);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return courseId;
+	}
+
+	@Override
+	public List<CourseCustom> findHisCourseByTIdAndStatus(Integer teacherId, Integer courseStatus) throws Exception {
+		// TODO Auto-generated method stub
+		CourseCustom cc = new CourseCustom();
+		cc.setTeacherId(teacherId);
+		cc.setCourseStatus(courseStatus);
+		List<CourseCustom> ccList = new LinkedList<>();
+		ccList = teacherMapper.findHistoryCourseByTeacherId(cc);
+		return ccList;
+	}
+
+	@Override
+	public Integer deleteCourseBycourseId(Integer courseId) {
+		// TODO Auto-generated method stub
+		Integer newCourseId = 0;
+		try {
+			newCourseId = teacherMapper.deleteCourseBycourseId(courseId);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return newCourseId;
+	}
+
+	@Override
+	public List<CourseCustom> findCourseByTeacherId(Integer courseId) {
+		// TODO Auto-generated method stub
+		List<CourseCustom> ccList = new LinkedList<>();
+		try {
+			ccList = teacherMapper.findCourseByTeacherId(courseId);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ccList;
+	}
+	
 }
 
 

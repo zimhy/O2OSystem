@@ -18,5 +18,6 @@
 <bean id="teacherService" class="cn.itcast.ssm.service.impl.TeacherServiceImpl"/>
 <bean id="organizationService" class="cn.itcast.ssm.service.impl.OrganizationServiceImpl"/>
 <bean id="courseService" class="cn.itcast.ssm.service.impl.CourseServiceImpl"/>
+<bean id="fileService" class="cn.itcast.ssm.service.impl.FileServiceImpl"/>
 
 </beans>

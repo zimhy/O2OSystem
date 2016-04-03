@@ -49,7 +49,27 @@
  	    values(null,#{teacherCode},#{teacherName},#{password},#{email},#{headPortraits},#{realName},#{gender},#{teacherAge},#{preference},#{phone},#{seniority},#{organizationId},#{education},#{description},2001,#{idNumber},#{teacherType},#{idPic},#{diplomaPic},#{masterDiplomaPic})
  	</insert>
 
- 
+ 	<insert id="insertCourse" parameterType="courseCustom">
+ 	 	<selectKey keyProperty="courseId" order="AFTER" resultType="java.lang.Integer">
+           SELECT LAST_INSERT_ID() 
+        </selectKey>
+ 		insert into t_course(courseCode,courseTypeId,teacherId,courseName,courseDesc,teachTime,totalStarLevel,teachAddress,
+ 		lessonNum,teachMethod,listenTest,coursePrice,mainImage,planStuNum,realStuNum,courseStatus) value(#{courseCode},#{courseTypeId},
+ 		#{teacherId},#{courseName},#{courseDesc},#{teachTime},#{totalStarLevel},#{teachAddress},
+ 		#{lessonNum},#{teachMethod},#{listenTest},#{coursePrice},#{mainImage},#{planStuNum},#{realStuNum},#{courseStatus})
+ 	</insert>
+ 	
+ 	<select id="findHistoryCourseByTeacherId" parameterType="courseCustom" resultType="courseCustom">
+ 		select * from t_course where teacherId = #{teacherId} and courseStatus = #{courseStatus};
+ 	</select>
+ 	
+ 	<update id="deleteCourseBycourseId" parameterType="java.lang.Integer">
+ 		update t_course set courseStatus = 1007 where courseId = #{courseId}
+ 	</update>
+ 	
+ 	<select id="findCourseByTeacherId" parameterType="java.lang.Integer" resultType="courseCustom">
+ 		select * from t_course where teacherId = #{teacherId}
+ 	</select>
  
 </mapper>
 
