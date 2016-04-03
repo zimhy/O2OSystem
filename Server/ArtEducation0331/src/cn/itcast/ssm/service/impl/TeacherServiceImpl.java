@@ -44,8 +44,15 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 	@Override
-	public Integer register(Teacher teacher) {
-		return teacherMapper.insertTeacher(teacher);
+	public String register(Teacher teacher) {
+		
+		if(findTeacherByNameOrEmail(teacher.getEmail()) == null)
+		{
+			return teacherMapper.insertTeacher(teacher)+"";
+		}else {
+			//
+			return "用户名已存在" ;
+		}
 		
 	}
 	

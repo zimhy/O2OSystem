@@ -21,6 +21,6 @@
         SELECT LAST_INSERT_ID() 
      </selectKey>
  	    insert into t_teacher
- 	    values(null,#{teacherCode},#{teacherName},#{password},#{email},#{headPortraits},#{realName},#{gender},#{teacherAge},#{preference},#{phone},#{seniority},#{organizationId},#{education},#{description},2001,#{teacherType},#{idPic},#{diplomaPic},#{masterDiplomaPic})
+ 	    values(null,#{teacherCode},#{teacherName},#{password},#{email},#{headPortraits},#{realName},#{gender},#{teacherAge},#{preference},#{phone},#{seniority},#{organizationId},#{education},#{description},2001,#{idNumber},#{teacherType},#{idPic},#{diplomaPic},#{masterDiplomaPic})
  	</insert>
 </mapper>
