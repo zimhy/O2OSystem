@@ -7,15 +7,40 @@
         select teacherId,password from t_teacher where teacherName=#{value}
     </select>
     
-    <!--  根据教师的邮箱，来查询教师的信息-->
+      <!-- 根据教师的id来查询教师的信息 -->
+    <select id="findTeacherById"  parameterType="java.lang.Integer" resultType="teachercustom">
+        select * from t_teacher where teacherId=#{value}
+    </select>
+    
+    <!--  根据教师的邮箱或教师的用户名来查询教师的信息-->
     <select id="findTeacherByNameOrEmail" parameterType="java.lang.String" resultType="teacherCustom">
        select teacherId,password from t_teacher where teacherName=#{value} or email=#{value}
     </select>
+    
+    <!-- 编辑教师的认证信息 -->
+    <update id="editTeacherDiplomaInfo" parameterType="teacherCustom" >
+         update t_teacher
+         set idPic=#{idPic},diplomaPic=#{diplomaPic},masterDiplomaPic=#{masterDiplomaPic}
+         where teacherId=#{teacherId}
+    </update>
+    
+    <!--  查询教师的课程-->
+    <select id="findTeacherCourses" parameterType="java.lang.Integer" resultType="teacherCourses">
+       select t_course.*
+       from t_course
+       where t_course.teacherId=#{value} 
+    </select>
+    
+    <!-- 编辑教师信息 -->
+    <update id="editTeacherInfo" parameterType="teacherCustom" >
+        update t_teacher
+        set email=#{email},teacherName=#{teacherName},realName=#{realName},gender=#{gender},teacherAge=#{teacherAge},
+            idNumber=#{idNumber},preference=#{preference},education=#{education},seniority=#{seniority},phone=#{phone},
+            teacherType=#{teacherType},description=#{description}
+        where teacherId=#{teacherId}
+    </update>
  
-
- 
- 
- 	<!-- 注册教师信息，并返回studentId -->
+	<!-- 注册教师信息，并返回studentId -->
  	<insert id="insertTeacher" parameterType="Teacher" >
  	 <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
         SELECT LAST_INSERT_ID() 
@@ -23,4 +48,14 @@
  	    insert into t_teacher
  	    values(null,#{teacherCode},#{teacherName},#{password},#{email},#{headPortraits},#{realName},#{gender},#{teacherAge},#{preference},#{phone},#{seniority},#{organizationId},#{education},#{description},2001,#{idNumber},#{teacherType},#{idPic},#{diplomaPic},#{masterDiplomaPic})
  	</insert>
+
+ 
+ 
 </mapper>
+
+
+
+
+
+
+

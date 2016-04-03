@@ -23,6 +23,7 @@ import cn.itcast.ssm.service.StudentService;
 import cn.itcast.ssm.view.DiscountCustomView;
 import cn.itcast.ssm.view.OrdersCarListView;
 import cn.itcast.ssm.view.StudentCourseEnrollView;
+import cn.itcast.ssm.view.StudentCourseView;
 import cn.itcast.ssm.view.StudentView;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
@@ -100,7 +101,7 @@ public class StudentController {
 	}
 	
 //	查询优惠券详细信息
-	@RequestMapping(value="queryDiscountDetail.action",method=RequestMethod.GET)
+	@RequestMapping(value="/queryDiscountDetail.action",method=RequestMethod.GET)
 	public @ResponseBody DiscountDetaileCustom queryDiscountDetail(Integer discountId)throws Exception{
 		DiscountDetaileCustom discountDetaileCustom=studentService.findDiscountDetailByDId(discountId);
 		System.out.println(discountDetaileCustom.toString());
@@ -216,6 +217,46 @@ public class StudentController {
 	@RequestMapping(value="/getDiscount.action",method=RequestMethod.GET)
 	public @ResponseBody List<MyDiscountInfo> getDiscount(Integer studentId){
 		return studentService.getDiscount(studentId);
+	}
+	
+	@RequestMapping(value="/queryStuCourseList.action",method=RequestMethod.GET)
+	public @ResponseBody List<StudentCourseView> queryStuCourseList(Integer studentId){
+		return studentService.findStuCouViewBySId(studentId);
+	}
+	
+//  生成优惠码
+	@RequestMapping(value="/getDiscountNum.action",method=RequestMethod.POST)
+	public void getDiscountNum(HttpServletRequest request,HttpServletResponse response){
+		String data=request.getParameter("data");
+		JSONObject jsonObject=JSONObject.fromObject(data);
+		String resultCode=null;
+//		获取学生id
+		Integer studentId=Integer.parseInt(jsonObject.get("studentId").toString());
+		
+		String s=jsonObject.get("ids").toString();
+		JSONArray jsonArray=JSONArray.fromObject(s);
+		
+		try {
+			for(int i=0;i<jsonArray.size();i++){
+				Integer ordersCarId=Integer.parseInt(jsonArray.getJSONObject(i).get("id").toString());
+				Integer courseId=Integer.parseInt(jsonArray.getJSONObject(i).get("courseId").toString());
+				studentService.insertDiscountNum(studentId, courseId, ordersCarId);
+			}
+			resultCode="{\"resultCode\":0}";
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			resultCode="{\"resultCode\":9001}";
+		}
+		
+		
+		try {
+			PrintWriter ps=response.getWriter();
+			ps.write(resultCode);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
 

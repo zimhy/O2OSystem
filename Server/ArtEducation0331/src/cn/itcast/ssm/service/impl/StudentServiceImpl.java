@@ -2,7 +2,9 @@ package cn.itcast.ssm.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,16 +12,19 @@ import cn.itcast.ssm.mapper.StudentMapper;
 import cn.itcast.ssm.po.CourseCustom;
 import cn.itcast.ssm.po.DiscountCustom;
 import cn.itcast.ssm.po.DiscountDetaileCustom;
+import cn.itcast.ssm.po.DiscountNum;
 import cn.itcast.ssm.po.MyDiscountInfo;
 import cn.itcast.ssm.po.OrdersCarCustom;
 import cn.itcast.ssm.po.OrdersCarInfo;
 import cn.itcast.ssm.po.OrdersCarList;
 import cn.itcast.ssm.po.Student;
+import cn.itcast.ssm.po.StudentCourseCustom;
 import cn.itcast.ssm.po.StudentCustom;
 import cn.itcast.ssm.service.StudentService;
 import cn.itcast.ssm.view.DiscountCustomView;
 import cn.itcast.ssm.view.OrdersCarListView;
 import cn.itcast.ssm.view.StudentCourseEnrollView;
+import cn.itcast.ssm.view.StudentCourseView;
 import cn.itcast.ssm.view.StudentView;
 
 
@@ -89,12 +94,7 @@ public class StudentServiceImpl implements StudentService{
 		sv.setEmail(sc.getEmail());
 		sv.setHeadPortraits(sc.getHeadPortraits());
 		sv.setStudentAge(sc.getStudentAge());
-		sv.setRealName(sc.getRealName());
-		if(sc.getGender().equals("男")){
-			sv.setGender("男");
-		}else if(sc.getGender().equals("女")){
-			sv.setGender("女");
-		}
+		sv.setPhone(sc.getPhone());
 		sv.setPreference(sc.getPreference());
 		return sv;
 	}
@@ -316,6 +316,47 @@ public class StudentServiceImpl implements StudentService{
 	public List<MyDiscountInfo> getDiscount(Integer studentId) {
 		// TODO Auto-generated method stub
 		return studentMapper.getDiscount(studentId);
+	}
+
+	@Override
+	public List<StudentCourseView> findStuCouViewBySId(Integer studentId) {
+		// TODO Auto-generated method stub
+		List<StudentCourseCustom> studentCourseCustomList = studentMapper.findStuCourseByStudentId(studentId);
+		List<StudentCourseView> studentCourseViewList = new LinkedList<>();
+		for(StudentCourseCustom scc : studentCourseCustomList){
+			studentCourseViewList.add(transToStudentCourseView(scc));
+		}
+		return studentCourseViewList;
+	}
+	
+	private StudentCourseView transToStudentCourseView(StudentCourseCustom scc){
+		StudentCourseView scv = new StudentCourseView();
+		scv.setStudentId(scc.getStudentId());
+		scv.setCourseId(scc.getCourseId());
+		scv.setCourseName(scc.getCourseName());
+		scv.setTeacherName(scc.getTeacherName());
+		scv.setTeachAddress(scc.getTeachAddress());
+		scv.setOrganizationName(scc.getOrganizationName());
+		return scv;
+	}
+
+//	生成优惠码
+	@Override
+	public void insertDiscountNum(Integer studentId,Integer courseId,Integer ordersCarId) {
+		// TODO Auto-generated method stub
+		DiscountNum discountNum=new DiscountNum();
+		discountNum.setStudentId(studentId);
+		discountNum.setCourseId(courseId);
+		Random rand=new Random();
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<6;i++){
+			sb.append(rand.nextInt(10));
+		}
+		String discountCode=sb.toString();
+		discountNum.setDiscountCode(discountCode);
+//		生成优惠码的同时将购物车列表中的课程删除
+		studentMapper.insertDiscountNum(discountNum);
+		studentMapper.deleteOrdersCar(ordersCarId);
 	}
 }
 
