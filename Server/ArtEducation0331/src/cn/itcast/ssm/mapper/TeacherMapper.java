@@ -25,9 +25,10 @@ public interface TeacherMapper {
 	
 //	编辑教师信息
 	public void editTeacherInfo(TeacherCustom teacherCustom);
-
+	
+//	修改教师密码
+	public void editTeacherPwd(TeacherCustom teacherCustom);
 	public Integer insertTeacher(Teacher teacher);
-
 
 	
 }

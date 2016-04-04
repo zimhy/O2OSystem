@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>springmvc_mybatis1208</display-name>
+	<display-name>ArtEducation</display-name>
 
 	<!-- 加载spring容器 -->
 	<context-param>
@@ -11,6 +11,7 @@
 <!--  /WEB-INF/classes/spring/applicationContext-*.xml这里的路径设置是怎么回事-->
 		<param-value>/WEB-INF/classes/spring/applicationContext-*.xml</param-value>
 	</context-param>
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

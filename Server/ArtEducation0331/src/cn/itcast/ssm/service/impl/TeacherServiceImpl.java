@@ -53,8 +53,18 @@ public class TeacherServiceImpl implements TeacherService{
 	@Override
 	public String editTeacherDiplomaInfo(TeacherCustom teacherCustom) {
 		// TODO Auto-generated method stub
+		TeacherCustom tc=teacherMapper.findTeacherById(teacherCustom.getTeacherId());
+		if(teacherCustom.getIdPic()!=null){
+			tc.setIdPic(teacherCustom.getIdPic());
+		}
+		if(teacherCustom.getDiplomaPic()!=null){
+			tc.setDiplomaPic(teacherCustom.getDiplomaPic());
+		}
+		if(teacherCustom.getMasterDiplomaPic()!=null){
+			tc.setMasterDiplomaPic(teacherCustom.getMasterDiplomaPic());
+		}
 		try {
-			teacherMapper.editTeacherDiplomaInfo(teacherCustom);
+			teacherMapper.editTeacherDiplomaInfo(tc);
 			return "0";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -160,9 +170,36 @@ public class TeacherServiceImpl implements TeacherService{
 		}
 	}
 
+//	修改教师密码
+	@Override
+	public String editTeacherPwd(String oldPassword,String newPassword,Integer teacherId) {
+		// TODO Auto-generated method stub
+		TeacherCustom tc=teacherMapper.findTeacherById(teacherId);
+		
+		System.out.println("***********");
+		System.out.println(oldPassword);
+		System.out.println(newPassword);
+		System.out.println(teacherId);
+		System.out.println(tc.getPassword());
+		System.out.println("***********");
+		
+		if(!tc.getPassword().equals(oldPassword)){
+			return "9001";
+		}else{
+			tc.setPassword(newPassword);
+			try {
+				teacherMapper.editTeacherPwd(tc);
+				return "0";
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return "9009";
+			}
+		}
+	}
+
 	@Override
 	public String register(Teacher teacher) {
-		
 		if(findTeacherByNameOrEmail(teacher.getEmail()) == null)
 		{
 			return teacherMapper.insertTeacher(teacher)+"";
@@ -171,8 +208,9 @@ public class TeacherServiceImpl implements TeacherService{
 			return "用户名已存在" ;
 		}
 		
-	
 	}
+	
+	
 }
 
 

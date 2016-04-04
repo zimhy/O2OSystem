@@ -26,7 +26,7 @@
 		解析 jsp视图，默认使用jstl 包-->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-		    <property name="prefix" value="/WEB-INF/jsp/"/>
+		    <property name="prefix" value="/jsp/"/>
 		    <property name="suffix" value=".jsp" /> 
 		</bean>
 		
@@ -41,11 +41,11 @@
 		</property>
 	</bean> -->
 	
-	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	    <property name="maxUploadSize">
-	    上传图片的最大尺寸是5MB 
-	        <value>5242880</value>
+	    <!-- 上传图片的最大尺寸是5MB  -->
+	        <value>52428800</value>
 	    </property>
-	</bean> -->
+	</bean> 
 		
 </beans>

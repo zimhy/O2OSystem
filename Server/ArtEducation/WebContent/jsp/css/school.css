@@ -1,0 +1,90 @@
+hr {
+  border-top: 1px solid #000;
+}
+button {
+  width: 130px;
+}
+thead th {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fulltime{
+  background-color: #fff;
+}
+.parttime{
+  background-color: #bbb;
+}
+img {
+  height:100%;
+  width:100%;
+}
+.tinfo td,
+.tdbasic{
+  font-size: 18px;
+  line-height: 3em;
+  padding: 5px;
+}
+
+
+textarea {
+  width: 100%;
+}
+
+.radiobox div{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.tuli:before {
+  content: '图例:';
+}
+.tuli li {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 3px;
+}
+
+.smfailed {
+  background-color: #e26a88;
+}
+
+.smwaiting {
+  background-color: #f6c1d2;
+}
+
+.smunfilled {
+  background-color: #6dd0db;
+}
+
+.smfull {
+  background-color: #3fa6d3;
+}
+
+.smsuspended {
+  background-color: #e3bb44;
+}
+
+.smgoing {
+  background-color: #e3e2df;
+}
+
+
+.smonlinepaid {
+  background-color: #fbbeff;
+}
+.smonlineunpaid {
+  background-color: #F400FF;
+}
+.smdiscount {
+  background-color: #f98451;
+}
+.smundiscount {
+  background-color: #f74c24;
+}
+

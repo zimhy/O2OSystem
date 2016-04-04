@@ -1,0 +1,32 @@
+.classPic {
+  width: 400px;
+  height: 200px;
+  margin: 10px 0;
+  display: inline-block;
+}
+#classPic1{
+  background: url(../img/main.jpg) no-repeat left top;
+}
+#classPic2{
+  background: url(../img/main.jpg) no-repeat left center;
+}
+
+#hcTable {
+  margin-top: 30px;
+  color: #000;
+}
+#hcTable th{
+  min-width: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.failed {
+  background-color: #FA474A;
+}
+.waiting {
+  background-color: #1C62DF;
+}
+.going {
+  background-color: #5DD130;
+}

@@ -110,4 +110,14 @@ public class Student {
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", nickName=" + nickName
+				+ ", password=" + password + ", email=" + email + ", headPortraits=" + headPortraits + ", studentAge="
+				+ studentAge + ", realName=" + realName + ", gender=" + gender + ", preference=" + preference
+				+ ", phone=" + phone + "]";
+	}
+    
+    
 }

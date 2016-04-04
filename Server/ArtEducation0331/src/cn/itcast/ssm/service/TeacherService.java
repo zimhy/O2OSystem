@@ -30,6 +30,9 @@ public interface TeacherService {
 	
 //	编辑教师信息
 	public String editTeacherInfo(TeacherCustom teacherCustom);
-
+	
+//	修改教师密码
+	public String editTeacherPwd(String oldPassword,String newPassword,Integer teacherId);
+	//教师注册
 	public String register(Teacher teacher);
 }
